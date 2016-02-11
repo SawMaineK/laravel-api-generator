@@ -66,7 +66,7 @@ Documentation
             "laracasts/flash": "~1.3",
             "laravelcollective/html": "5.2.*",
             "bosnadev/repositories": "dev-master",
-            "mitulgolakiya/laravel-api-generator": "dev-master"
+            "sawmainek/laravel-api-generator": "dev-master"
         }
   
 2. Run composer update
