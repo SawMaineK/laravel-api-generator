@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      se7en - Dashboard
+    </title>
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/font-awesome.min.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/se7en-font.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/isotope.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/jquery.fancybox.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/fullcalendar.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/wizard.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/select2.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/morris.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/datatables.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/datepicker.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/timepicker.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/colorpicker.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/bootstrap-switch.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/bootstrap-editable.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/daterange-picker.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/typeahead.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/summernote.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/ladda-themeless.min.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/social-buttons.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/pygments.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/style.css" media="all" rel="stylesheet" type="text/css" /><link href="../stylesheets/color/green.css" media="all" rel="alternate stylesheet" title="green-theme" type="text/css" /><link href="../stylesheets/color/orange.css" media="all" rel="alternate stylesheet" title="orange-theme" type="text/css" /><link href="../stylesheets/color/magenta.css" media="all" rel="alternate stylesheet" title="magenta-theme" type="text/css" /><link href="../stylesheets/color/gray.css" media="all" rel="alternate stylesheet" title="gray-theme" type="text/css" /><link href="../stylesheets/jquery.fileupload-ui.css" media="screen" rel="stylesheet" type="text/css" /><link href="../stylesheets/dropzone.css" media="screen" rel="stylesheet" type="text/css" /><link href="../stylesheets/docs.css" media="all" rel="stylesheet" type="text/css" /><script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script><script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script><script src="../javascripts/bootstrap.min.js" type="text/javascript"></script><script src="../javascripts/raphael.min.js" type="text/javascript"></script><script src="../javascripts/selectivizr-min.js" type="text/javascript"></script><script src="../javascripts/jquery.mousewheel.js" type="text/javascript"></script><script src="../javascripts/jquery.vmap.min.js" type="text/javascript"></script><script src="../javascripts/jquery.vmap.sampledata.js" type="text/javascript"></script><script src="../javascripts/jquery.vmap.world.js" type="text/javascript"></script><script src="../javascripts/jquery.bootstrap.wizard.js" type="text/javascript"></script><script src="../javascripts/fullcalendar.min.js" type="text/javascript"></script><script src="../javascripts/gcal.js" type="text/javascript"></script><script src="../javascripts/jquery.dataTables.min.js" type="text/javascript"></script><script src="../javascripts/datatable-editable.js" type="text/javascript"></script><script src="../javascripts/jquery.easy-pie-chart.js" type="text/javascript"></script><script src="../javascripts/excanvas.min.js" type="text/javascript"></script><script src="../javascripts/jquery.isotope.min.js" type="text/javascript"></script><script src="../javascripts/isotope_extras.js" type="text/javascript"></script><script src="../javascripts/modernizr.custom.js" type="text/javascript"></script><script src="../javascripts/jquery.fancybox.pack.js" type="text/javascript"></script><script src="../javascripts/select2.js" type="text/javascript"></script><script src="../javascripts/styleswitcher.js" type="text/javascript"></script><script src="../javascripts/wysiwyg.js" type="text/javascript"></script><script src="../javascripts/typeahead.js" type="text/javascript"></script><script src="../javascripts/summernote.min.js" type="text/javascript"></script><script src="../javascripts/jquery.inputmask.min.js" type="text/javascript"></script><script src="../javascripts/jquery.validate.js" type="text/javascript"></script><script src="../javascripts/bootstrap-fileupload.js" type="text/javascript"></script><script src="../javascripts/bootstrap-datepicker.js" type="text/javascript"></script><script src="../javascripts/bootstrap-timepicker.js" type="text/javascript"></script><script src="../javascripts/bootstrap-colorpicker.js" type="text/javascript"></script><script src="../javascripts/bootstrap-switch.min.js" type="text/javascript"></script><script src="../javascripts/typeahead.js" type="text/javascript"></script><script src="../javascripts/spin.min.js" type="text/javascript"></script><script src="../javascripts/ladda.min.js" type="text/javascript"></script><script src="../javascripts/moment.js" type="text/javascript"></script><script src="../javascripts/mockjax.js" type="text/javascript"></script><script src="../javascripts/bootstrap-editable.min.js" type="text/javascript"></script><script src="../javascripts/xeditable-demo-mock.js" type="text/javascript"></script><script src="../javascripts/xeditable-demo.js" type="text/javascript"></script><script src="../javascripts/address.js" type="text/javascript"></script><script src="../javascripts/daterange-picker.js" type="text/javascript"></script><script src="../javascripts/date.js" type="text/javascript"></script><script src="../javascripts/morris.min.js" type="text/javascript"></script><script src="../javascripts/skycons.js" type="text/javascript"></script><script src="../javascripts/fitvids.js" type="text/javascript"></script><script src="../javascripts/jquery.sparkline.min.js" type="text/javascript"></script><script src="../javascripts/dropzone.js" type="text/javascript"></script><script src="../javascripts/main.js" type="text/javascript"></script><script src="../javascripts/respond.js" type="text/javascript"></script><script src="../javascripts/docs.js" type="text/javascript"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  </head>
+  <body class="bg-1" data-spy="scroll" data-target=".navbar">
+    <div class="navbar navbar-docs hidden-xs">
+      <ul class="nav">
+        <li class="active">
+          <a href="#overview">Overview</a>
+        </li>
+        <li>
+          <a href="#features">Features</a>
+        </li>
+        <li>
+          <a href="#bootstrap">Bootstrap 3</a>
+        </li>
+        <li>
+          <a href="#navigation">Header & Navigation</a>
+        </li>
+        <li>
+          <a href="#widget-container">Widget Containers</a>
+        </li>
+        <li class="dropdown">
+          <b class="caret"></b><a href="#">Icons</a>
+          <ul>
+            <li>
+              <a href="#icons">Se7en Icons</a>
+            </li>
+            <li>
+              <a href="#fontawesome">Font Awesome Icons</a>
+            </li>
+            <li>
+              <a href="#glyphicons">Glyphicons</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <b class="caret"></b><a href="#">Javascript</a>
+          <ul>
+            <li>
+              <a href="#sparkline">Sparkline</a>
+            </li>
+            <li>
+              <a href="#easy-pie">Easy Pie Chart</a>
+            </li>
+            <li>
+              <a href="#skycons">Skycons</a>
+            </li>
+            <li>
+              <a href="#slider">jQuery UI Slider</a>
+            </li>
+            <li>
+              <a href="#ladda">Ladda Buttons</a>
+            </li>
+            <li>
+              <a href="#maps">JQVMap</a>
+            </li>
+            <li>
+              <a href="#calendar-link">Full Calendar</a>
+            </li>
+            <li>
+              <a href="#datatables">DataTables</a>
+            </li>
+            <li>
+              <a href="#isotope">Isotope</a>
+            </li>
+            <li>
+              <a href="#fancybox">Fancybox</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <b class="caret"></b><a href="#">Form Components</a>
+          <ul>
+            <li>
+              <a href="#select2">Select2</a>
+            </li>
+            <li>
+              <a href="#typeahead">Typeahead (Autocomplete)</a>
+            </li>
+            <li>
+              <a href="#toggle">Toggle Switches</a>
+            </li>
+            <li>
+              <a href="#validation">Validation</a>
+            </li>
+            <li>
+              <a href="#datepicker">Date Picker</a>
+            </li>
+            <li>
+              <a href="#timepicker">Time Picker</a>
+            </li>
+            <li>
+              <a href="#colorpicker">Color Picker</a>
+            </li>
+            <li>
+              <a href="#inputmasks">Input Masks</a>
+            </li>
+            <li>
+              <a href="#fileupload-btn">File Upload Button</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#credits">Credits</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container-fluid main-content">
+      <div class="page-title">
+        <h1>
+          Documentation
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height clearfix" id="overview">
+            <div class="heading">
+              What is Se7en?
+            </div>
+            <div class="widget-content padded">
+              <h3>
+                Se7en is a fully responsive admin template. We employ stunning design, the latest technologies and industry best practices to create a one of kind administration template suitable for many needs.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height list" id="features">
+            <div class="heading">
+              Features
+            </div>
+            <div class="widget-content">
+              <ul>
+                <li>
+                  Built with Bootstrap 3
+                </li>
+                <li>
+                  100% Mobile ready & responsive layout
+                </li>
+                <li>
+                  Valid HTML5 and CSS3
+                </li>
+                <li>
+                  Retina ready
+                </li>
+                <li>
+                  Clean and sleek design
+                </li>
+                <li>
+                  Cross-browser compatible (Chrome/Safari/Firefox/IE8+)
+                </li>
+                <li>
+                  SASS and Coffeescript ready
+                </li>
+                <li>
+                  Clean developer friendly markup
+                </li>
+                <li>
+                  Image gallery
+                </li>
+                <li>
+                  Custom buttons and colors
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="bootstrap">
+            <div class="heading">
+              Bootstrap 3
+            </div>
+            <div class="widget-content padded">
+              <p>
+                Se7en comes fully packed with all the awesomeness of Bootstrap 3. We've included all the latest CSS and JS for your pleasure. For all info on how to use Bootstrap 3's CSS and components, please visit the <a target="_blank" href="http://getbootstrap.com/css/">Boostrap 3 Official Documentation</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="navigation">
+            <div class="heading">
+              Header & Navigation
+            </div>
+            <div class="widget-content padded">
+              <p>
+                Se7en's custom header and navigation system (including user controls and mobile navigation) can be found early in the body and is documented for quick identification. The header contains dynamic visual elements but the content remains easy to modify.
+              </p><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-fixed-top scroll-hide&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container-fluid top-bar&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pull-right&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navbar-nav pull-right&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown notifications hidden-xs&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;se7en-icon&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>
+              Notifications
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;counter&quot;</span><span class="nt">&gt;</span>
+              4
+            <span class="nt">&lt;/p&gt;</span>
+          <span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;notifications label label-info&quot;</span><span class="nt">&gt;</span>
+                New
+              <span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                Notification
+              <span class="nt">&lt;/p&gt;&lt;/a&gt;</span>
+              
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;notifications label label-info&quot;</span><span class="nt">&gt;</span>
+                New
+              <span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                Notification
+              <span class="nt">&lt;/p&gt;&lt;/a&gt;</span>
+              
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                Notification
+              <span class="nt">&lt;/p&gt;&lt;/a&gt;</span>
+              
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                Notification
+              <span class="nt">&lt;/p&gt;&lt;/a&gt;</span>
+              
+            <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown messages hidden-xs&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;se7en-icon&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>
+              Messages
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;counter&quot;</span><span class="nt">&gt;</span>
+              3
+            <span class="nt">&lt;/p&gt;</span>
+          <span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu messages&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              Message...<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              Message...<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              Message...<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown user hidden-xs&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;img</span> <span class="na">width=</span><span class="s">&quot;34&quot;</span> <span class="na">height=</span><span class="s">&quot;34&quot;</span> <span class="na">src=</span><span class="s">&quot;../images/avatar-male.jpg&quot;</span> <span class="nt">/&gt;</span>John Smith<span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;&lt;/a&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-user&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>My Account<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-gear&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>Account Settings<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;./&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-signout&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>Logout<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;navbar-toggle&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fa fa-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fa fa-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fa fa-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/button&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;logo&quot;</span> <span class="na">href=</span><span class="s">&quot;index.html&quot;</span><span class="nt">&gt;</span>Your logo<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;navbar-form form-inline col-lg-2 hidden-xs&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container-fluid main-nav clearfix&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;nav-collapse&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;index.html&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;se7en-home&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;page.html&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;se7en-icon&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;se7en-icon&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Dropdown Link<span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;&lt;/a&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+              <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;page.html&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+              <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;page.html&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+              <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;page.html&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;page.html&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;se7en-icon&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;page.html&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;se7en-icon&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;page.html&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;se7en-icon&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;page.html&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;se7en-icon&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+              <p>
+                By default, the header will animate and slide up when the user starts scrolling down the page. To remove the animation and the action, simply remove the class "scroll-hide" from the navbar:
+              </p><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;navbar navbar-fixed-top scroll-hide&#39;</span><span class="nt">&gt;</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="widget-container">
+            <div class="heading">
+              Widget Container
+            </div>
+            <div class="widget-content padded"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;widget-container&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;heading&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-question&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>Widget Name
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;widget-content&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      This is content for this widget
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <h2>
+            Icons
+          </h2>
+        </div>
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="icons">
+            <div class="heading">
+              Custom Se7en Icons
+            </div>
+            <div class="widget-content padded">
+              <p>
+                The icons used for the main navigation have been custom created and implemented using a custom built font. Our icons can be used on any page by calling them with our pre-built syntax.
+              </p><div class="highlight"><pre><span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&#39;true&#39;</span> <span class="na">class=</span><span class="s">&#39;se7en-icon-name&#39;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</pre></div>
+              <p>
+                These are all the included se7en icons:
+              </p>
+              <span aria-hidden="true" class="se7en-flag" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-envelope" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-gear" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-home" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-feed" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-star" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-forms" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-tables" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-charts" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-pages" style="font-size:28px;margin-right:20px;"></span><span aria-hidden="true" class="se7en-gallery" style="font-size:28px;margin-right:20px;"></span><br><br>
+              <p>
+                They can also be scaled infinitely and changed to any color directly in the css.
+              </p>
+              <div class="nav-icons">
+                <span aria-hidden="true" class="se7en-feed" style="font-size:112px;"></span><span aria-hidden="true" class="se7en-feed" style="font-size:56px;margin-right:5px;"></span><span aria-hidden="true" class="se7en-feed" style="font-size:28px;margin-right:25px;"></span><span aria-hidden="true" class="se7en-feed" style="font-size:112px;color:#007aff;"></span><span aria-hidden="true" class="se7en-feed" style="font-size:56px;margin-right:5px;color:#007aff;"></span><span aria-hidden="true" class="se7en-feed" style="font-size:28px;color:#007aff;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="fontawesome">
+            <div class="heading">
+              Font Awesome 4 Icons
+            </div>
+            <div class="widget-content padded">
+              <p>
+                We've included the latest Font Awesome 4 icons, which includes over 369 icons. To place a Font Awesome icon, simply use this class:
+              </p><div class="highlight"><pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#39;fa fa-&#39;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</pre></div>
+              <p>
+                For example:
+              </p>
+              <i class="fa fa-home" style="font-size:28px;"></i><div class="highlight"><pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#39;fa fa-home&#39;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</pre></div>
+              <p>
+                For more information on how to use their icons, visit  <a target="_blank" href="http://fortawesome.github.io/Font-Awesome/examples/">Font Awesome</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="glyphicons">
+            <div class="heading">
+              Glyphicons
+            </div>
+            <div class="widget-content padded">
+              <p>
+                We've also included 180 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. 
+              </p>
+              <p>
+                To use a Font Awesome icon, simply use this class:
+              </p><div class="highlight"><pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#39;glyphicon glyphicon-&#39;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</pre></div>
+              <p>
+                For example:
+              </p>
+              <span class="glyphicon glyphicon-user" style="font-size:28px;"></span><div class="highlight"><pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#39;glyphicon glyphicon-user&#39;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</pre></div>
+              <p>
+                For more information on how to use Glyphicons, visit  <a target="_blank" href="http://getbootstrap.com/components/#glyphicons">Bootstrap's Documentation</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <h2>
+            Javascript Components
+          </h2>
+        </div>
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="sparkline">
+            <div class="heading">
+              Sparkline<a class="pull-right" href="http://omnipotent.net/jquery.sparkline/#s-about" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <p>
+                Basic bar chart
+              </p>
+              <div class="sparkline-bar"></div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.sparkline&#39;</span><span class="p">).</span><span class="nx">sparkline</span><span class="p">([</span><span class="mi">160</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">260</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">260</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">barSpacing</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">barWidth</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">barColor</span><span class="o">:</span> <span class="s1">&#39;#f5af50&#39;</span><span class="p">});</span>
+</pre></div>
+              <p>
+                Basic line graph
+              </p>
+              <div class="sparkline-line"></div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.sparkline&#39;</span><span class="p">).</span><span class="nx">sparkline</span><span class="p">([</span><span class="mi">160</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span> <span class="mi">380</span><span class="p">],</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="nx">width</span><span class="o">:</span> <span class="s1">&#39;150&#39;</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;50&#39;</span><span class="p">,</span> <span class="nx">lineColor</span><span class="o">:</span> <span class="s1">&#39;#a5e1ff&#39;</span><span class="p">,</span> <span class="nx">fillColor</span><span class="o">:</span> <span class="s1">&#39;rgba(241, 251, 255, 0.9)&#39;</span><span class="p">,</span> <span class="nx">lineWidth</span><span class="o">:</span> <span class="mi">2</span> <span class="p">});</span>
+</pre></div>
+              <p>
+                Pie chart
+              </p>
+              <div class="sparkline-pie"></div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.sparkline&#39;</span><span class="p">).</span><span class="nx">sparkline</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;pie&#39;</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;120&#39;</span><span class="p">,</span> <span class="nx">width</span><span class="o">:</span> <span class="s1">&#39;120&#39;</span><span class="p">,</span> <span class="nx">sliceColors</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;#a0eeed&#39;</span><span class="p">,</span><span class="s1">&#39;#81e970&#39;</span><span class="p">,</span><span class="s1">&#39;#f5af50&#39;</span><span class="p">,</span><span class="s1">&#39;#f46f50&#39;</span><span class="p">]</span> <span class="p">});</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="easy-pie">
+            <div class="heading">
+              Easy Pie Chart<a class="pull-right" href="http://rendro.github.io/easy-pie-chart/" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <div class="easy-pie-chart" data-percent="70">
+                70%
+              </div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.easy-pie-chart&#39;</span><span class="p">).</span><span class="nx">easyPieChart</span><span class="p">({</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span> <span class="nx">lineWidth</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">lineCap</span><span class="o">:</span> <span class="s1">&#39;square&#39;</span><span class="p">,</span> <span class="nx">barColor</span><span class="o">:</span> <span class="s1">&#39;#81e970&#39;</span><span class="p">,</span> <span class="nx">animate</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span> <span class="nx">scaleColor</span><span class="o">:</span> <span class="kc">false</span> <span class="p">});</span>
+</pre></div>
+              <p>
+                * Requires excanvas.min.js for IE8 support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="skycons">
+            <div class="heading">
+              Skycons<a class="pull-right" href="http://darkskyapp.github.io/skycons/" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <div class="skycons">
+                <canvas height="64" id="clear-day" width="64"></canvas><canvas height="64" id="clear-night" width="64"></canvas><canvas height="64" id="partly-cloudy-day" width="64"></canvas><canvas height="64" id="partly-cloudy-night" width="64"></canvas><canvas height="64" id="cloudy" width="64"></canvas><canvas height="64" id="rain" width="64"></canvas><canvas height="64" id="sleet" width="64"></canvas><canvas height="64" id="snow" width="64"></canvas><canvas height="64" id="wind" width="64"></canvas><canvas height="64" id="fog" width="64"></canvas>
+              </div><div class="highlight"><pre><span class="kd">var</span> <span class="nx">skycons</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Skycons</span><span class="p">({</span><span class="s1">&#39;color&#39;</span><span class="o">:</span> <span class="s1">&#39;black&#39;</span><span class="p">});</span>
+</pre></div>
+              <p>
+                You can add a canvas by it's ID
+              </p><div class="highlight"><pre><span class="nx">skycons</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;icon1&#39;</span><span class="p">,</span> <span class="nx">Skycons</span><span class="p">.</span><span class="nx">PARTLY_CLOUDY_DAY</span><span class="p">);</span>
+</pre></div>
+              <p>
+                Or by the canvas DOM element itself
+              </p><div class="highlight"><pre><span class="nx">skycons</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;icon1&#39;</span><span class="p">),</span> <span class="nx">Skycons</span><span class="p">.</span><span class="nx">RAIN</span><span class="p">);</span>
+</pre></div>
+              <p>
+                Start animation!
+              </p><div class="highlight"><pre><span class="nx">skycons</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="slider">
+            <div class="heading">
+              jQuery UI Slider<a class="pull-right" href="https://github.com/hakimel/Ladda" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <div class="slider-basic"></div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.slider&#39;</span><span class="p">).</span><span class="nx">slider</span><span class="p">({</span><span class="nx">range</span><span class="o">:</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">50</span><span class="p">});</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="slider">
+            <div class="heading">
+              Ladda Buttons<a class="pull-right" href="http://jqueryui.com/slider/" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <button class="btn btn-primary ladda-button" data-style="expand-left"><span class="ladda-label">Expand left</span></button><div class="highlight"><pre><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&#39;btn ladda-button&#39;</span> <span class="na">data-style=</span><span class="s">&#39;expand-left&#39;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&#39;ladda-label&#39;</span><span class="nt">&gt;</span>Expand left<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+</pre></div><button class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Expand right</span></button><div class="highlight"><pre><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&#39;btn ladda-button&#39;</span> <span class="na">data-style=</span><span class="s">&#39;expand-right&#39;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&#39;ladda-label&#39;</span><span class="nt">&gt;</span>Expand left<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+</pre></div><button class="btn btn-danger ladda-button progress-demo" data-style="expand-left"><span class="ladda-label">Progress left</span></button><div class="highlight"><pre><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&#39;btn ladda-button progress-demo&#39;</span> <span class="na">data-style=</span><span class="s">&#39;expand-right&#39;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&#39;ladda-label&#39;</span><span class="nt">&gt;</span>Progress left<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="components">
+            <div class="heading">
+              Other Javascript Components
+            </div>
+            <div class="widget-content padded">
+              <ul class="list-unstyled">
+                <li id="maps">
+                  JQVMap<a class="pull-right" href="http://jqvmap.com/" target="blank">Full documentation</a><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.map&#39;</span><span class="p">).</span><span class="nx">vectorMap</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</pre></div>
+                </li>
+                <li id="calendar-link">
+                  Full Calendar<a class="pull-right" href="http://arshaw.com/fullcalendar/" target="_blank">Full documentation</a><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.calendar&#39;</span><span class="p">).</span><span class="nx">fullCalendar</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</pre></div>
+                </li>
+                <li id="datatables">
+                  DataTables<a class="pull-right" href="https://datatables.net/" target="_blank">Full documentation</a><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.dataTable&#39;</span><span class="p">).</span><span class="nx">dataTable</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</pre></div>
+                </li>
+                <li id="isotope">
+                  Isotope<a class="pull-right" href="http://isotope.metafizzy.co/" target="_blank">Full documentation</a><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.isotope&#39;</span><span class="p">).</span><span class="nx">isotope</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</pre></div>
+                </li>
+                <li id="fancybox">
+                  Fancybox<a class="pull-right" href="http://fancyapps.com/fancybox/" target="_blank">Full documentation</a><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.fancybox&#39;</span><span class="p">).</span><span class="nx">fancybox</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</pre></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <h2>
+            Form Components
+          </h2>
+        </div>
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="select2">
+            <div class="heading">
+              Select2 Dropdowns<a class="pull-right" href="http://ivaynberg.github.io/select2/" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <select class="select2"><option value="Category 1">Option 1</option><option value="Category 2">Option 2</option><option value="Category 3">Option 3</option><option value="Category 4">Option 4</option></select><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.select2&#39;</span><span class="p">).</span><span class="nx">select2</span><span class="p">();</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="typeahead">
+            <div class="heading">
+              Typeahead (Autocomplete)<a class="pull-right" href="http://twitter.github.io/typeahead.js/" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <input autocomplete="off" class="form-control states typeahead tt-query col-md-7" dir="auto" placeholder="Search for a U.S. state" spellcheck="false" type="text"><br><br><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.states.typeahead&#39;</span><span class="p">).</span><span class="nx">typeahead</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;states&#39;</span><span class="p">,</span> <span class="nx">local</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Alabama&#39;</span><span class="p">,</span> <span class="s1">&#39;Alaska&#39;</span><span class="p">,</span> <span class="s1">&#39;Arizona&#39;</span><span class="p">,</span> <span class="s1">&#39;Arkansas&#39;</span><span class="p">,</span> <span class="s1">&#39;California&#39;</span><span class="p">,</span> <span class="s1">&#39;Colorado&#39;</span><span class="p">,</span> <span class="s1">&#39;Connecticut&#39;</span><span class="p">,</span> <span class="s1">&#39;Delaware&#39;</span><span class="p">,</span> <span class="s1">&#39;Florida&#39;</span><span class="p">,</span> <span class="s1">&#39;Georgia&#39;</span><span class="p">,</span> <span class="s1">&#39;Hawaii&#39;</span><span class="p">,</span> <span class="s1">&#39;Idaho&#39;</span><span class="p">,</span> <span class="s1">&#39;Illinois&#39;</span><span class="p">,</span> <span class="s1">&#39;Indiana&#39;</span><span class="p">,</span> <span class="s1">&#39;Iowa&#39;</span><span class="p">,</span> <span class="s1">&#39;Kansas&#39;</span><span class="p">,</span> <span class="s1">&#39;Kentucky&#39;</span><span class="p">,</span> <span class="s1">&#39;Louisiana&#39;</span><span class="p">,</span> <span class="s1">&#39;Maine&#39;</span><span class="p">,</span> <span class="s1">&#39;Maryland&#39;</span><span class="p">,</span> <span class="s1">&#39;Massachusetts&#39;</span><span class="p">,</span> <span class="s1">&#39;Michigan&#39;</span><span class="p">,</span> <span class="s1">&#39;Minnesota&#39;</span><span class="p">,</span> <span class="s1">&#39;Mississippi&#39;</span><span class="p">,</span> <span class="s1">&#39;Missouri&#39;</span><span class="p">,</span> <span class="s1">&#39;Montana&#39;</span><span class="p">,</span> <span class="s1">&#39;Nebraska&#39;</span><span class="p">,</span> <span class="s1">&#39;Nevada&#39;</span><span class="p">,</span> <span class="s1">&#39;New Hampshire&#39;</span><span class="p">,</span> <span class="s1">&#39;New Jersey&#39;</span><span class="p">,</span> <span class="s1">&#39;New Mexico&#39;</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;North Dakota&#39;</span><span class="p">,</span> <span class="s1">&#39;North Carolina&#39;</span><span class="p">,</span> <span class="s1">&#39;Ohio&#39;</span><span class="p">,</span> <span class="s1">&#39;Oklahoma&#39;</span><span class="p">,</span> <span class="s1">&#39;Oregon&#39;</span><span class="p">,</span> <span class="s1">&#39;Pennsylvania&#39;</span><span class="p">,</span> <span class="s1">&#39;Rhode Island&#39;</span><span class="p">,</span> <span class="s1">&#39;South Carolina&#39;</span><span class="p">,</span> <span class="s1">&#39;South Dakota&#39;</span><span class="p">,</span> <span class="s1">&#39;Tennessee&#39;</span><span class="p">,</span> <span class="s1">&#39;Texas&#39;</span><span class="p">,</span> <span class="s1">&#39;Utah&#39;</span><span class="p">,</span> <span class="s1">&#39;Vermont&#39;</span><span class="p">,</span> <span class="s1">&#39;Virginia&#39;</span><span class="p">,</span> <span class="s1">&#39;Washington&#39;</span><span class="p">,</span> <span class="s1">&#39;West Virginia&#39;</span><span class="p">,</span> <span class="s1">&#39;Wisconsin&#39;</span><span class="p">,</span> <span class="s1">&#39;Wyoming&#39;</span><span class="p">]});</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="toggle">
+            <div class="heading">
+              Toggle Switches<a class="pull-right" href="http://www.bootstrap-switch.org/" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <div class="toggle-switch switch-large">
+                <input checked="" type="checkbox">
+              </div>
+              <div class="toggle-switch">
+                <input checked="" type="checkbox">
+              </div>
+              <div class="toggle-switch switch-small">
+                <input checked="" type="checkbox">
+              </div>
+              <div class="toggle-switch switch-mini">
+                <input checked="" type="checkbox">
+              </div>
+              <br><br><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch switch-large&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch switch-small&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch switch-mini&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+              <p>
+                Switch colors
+              </p>
+              <div class="toggle-switch" data-off="danger" data-on="info">
+                <input checked="" type="checkbox">
+              </div>
+              <div class="toggle-switch" data-off="warning" data-on="success">
+                <input checked="" type="checkbox">
+              </div>
+              <br><br><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="na">data-off=</span><span class="s">&quot;info&quot;</span> <span class="na">data-on=</span><span class="s">&quot;primary&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="na">data-off=</span><span class="s">&quot;success&quot;</span> <span class="na">data-on=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="na">data-off=</span><span class="s">&quot;warning&quot;</span> <span class="na">data-on=</span><span class="s">&quot;success&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="na">data-off=</span><span class="s">&quot;danger&quot;</span> <span class="na">data-on=</span><span class="s">&quot;warning&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="na">data-off=</span><span class="s">&quot;default&quot;</span> <span class="na">data-on=</span><span class="s">&quot;danger&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;toggle-switch&quot;</span> <span class="na">data-off=</span><span class="s">&quot;primary&quot;</span> <span class="na">data-on=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+              <p>
+                Different labels
+              </p>
+              <div class="toggle-switch text-toggle-switch" data-off-label="GOODBYE" data-on="primary" data-on-label="HELLO" style="width:200px;">
+                <input checked="" type="checkbox">
+              </div>
+              <br><br><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;toggle-switch text-toggle-switch&#39;</span> <span class="na">data-off-label=</span><span class="s">&#39;GOODBYE&#39;</span> <span class="na">data-on=</span><span class="s">&#39;primary&#39;</span> <span class="na">data-on-label=</span><span class="s">&#39;HELLO&#39;</span> <span class="na">style=</span><span class="s">&#39;width:200px;&#39;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&#39;checkbox&#39;</span> <span class="na">checked</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="validation">
+            <div class="heading">
+              Validation<a class="pull-right" href="http://jqueryvalidation.org/documentation/" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <form action="" id="validate-form" method="get">
+                <fieldset>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="firstname">First Name</label><input class="form-control" id="firstname" name="firstname" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <input class="btn btn-primary" style="margin-bottom: 25px;" type="submit" value="Validate form">
+                </fieldset>
+              </form><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#validate-form&#39;</span><span class="p">).</span><span class="nx">validate</span><span class="p">({</span> <span class="nx">rules</span><span class="o">:</span> <span class="p">{</span><span class="nx">firstname</span><span class="o">:</span> <span class="s1">&#39;required&#39;</span><span class="p">});</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="datepicker">
+            <div class="heading">
+              Date Picker<a class="pull-right" href="http://www.eyecon.ro/bootstrap-datepicker/" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-3">
+                  <div class="input-group date datepicker">
+                    <input class="form-control" type="text"><span class="input-group-addon"><i class="fa fa-calendar"></i></span></input>
+                  </div>
+                </div>
+              </div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.datepicker&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">();</span>
+</pre></div>
+              <p>
+                To autoclose date picker
+              </p>
+              <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-3">
+                  <div class="input-group date datepicker" data-date-autoclose="true" data-date-format="dd-mm-yyyy">
+                    <input class="form-control" type="text"><span class="input-group-addon"><i class="fa fa-calendar"></i></span></input>
+                  </div>
+                </div>
+              </div><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;date datepicker&#39;</span> <span class="na">data-date-autoclose=</span><span class="s">&#39;true&#39;</span> <span class="na">data-date-format=</span><span class="s">&#39;dd-mm-yyyy&#39;</span><span class="nt">&gt;</span>
+</pre></div>
+              <p>
+                To start with the year
+              </p>
+              <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-3">
+                  <div class="input-group date datepicker" data-date-autoclose="true" data-date-format="dd.mm.yyyy" data-date-start-view="2">
+                    <input class="form-control" type="text"><span class="input-group-addon"><i class="fa fa-calendar"></i></span></input>
+                  </div>
+                </div>
+              </div><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;input-group date datepicker&#39;</span> <span class="na">data-date-autoclose=</span><span class="s">&#39;true&#39;</span> <span class="na">data-date-format=</span><span class="s">&#39;dd.mm.yyyy&#39;</span> <span class="na">data-date-start-view=</span><span class="s">&#39;2&#39;</span><span class="nt">&gt;</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="timepicker">
+            <div class="heading">
+              Time Picker<a class="pull-right" href="http://jdewit.github.io/bootstrap-timepicker/" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <p>
+                Default
+              </p>
+              <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-3">
+                  <div class="input-group bootstrap-timepicker">
+                    <input class="form-control" id="timepicker-default" type="text"><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></input>
+                  </div>
+                </div>
+              </div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#timepicker-default&#39;</span><span class="p">).</span><span class="nx">timepicker</span><span class="p">();</span>
+</pre></div>
+              <p>
+                24 Hour
+              </p>
+              <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-3">
+                  <div class="input-group bootstrap-timepicker">
+                    <input class="form-control" id="timepicker-24h" type="text"><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></input>
+                  </div>
+                </div>
+              </div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#timepicker-default&#39;</span><span class="p">).</span><span class="nx">timepicker</span><span class="p">({</span> <span class="nx">minuteStep</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">showSeconds</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">showMeridian</span><span class="o">:</span> <span class="kc">false</span> <span class="p">});</span>
+</pre></div>
+              <p>
+                No dropdown
+              </p>
+              <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-3">
+                  <div class="bootstrap-timepicker">
+                    <input class="form-control" id="timepicker-noTemplate" type="text"><i class="fa fa-clock-o"></i>
+                  </div>
+                </div>
+              </div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#timepicker-default&#39;</span><span class="p">).</span><span class="nx">timepicker</span><span class="p">({</span> <span class="nx">template</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">showInputs</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">minuteStep</span><span class="o">:</span> <span class="mi">5</span> <span class="p">});</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="colorpicker">
+            <div class="heading">
+              Color Picker<a class="pull-right" href="http://www.eyecon.ro/bootstrap-colorpicker" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <p>
+                Default
+              </p>
+              <div class="row" style="margin-bottom: 20px;">
+                <div class="col-sm-4">
+                  <input class="form-control" id="cp1" type="text" value="#8fff00">
+                </div>
+              </div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#colorpicker1&#39;</span><span class="p">).</span><span class="nx">colorpicker</span><span class="p">();</span>
+</pre></div>
+              <p>
+                RGBA Value
+              </p>
+              <div class="row" style="margin-bottom: 20px;">
+                <div class="col-sm-4">
+                  <input class="form-control" data-color-format="rgba" id="cp2" type="text" value="rgb(0,194,255,0.78)">
+                </div>
+              </div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#colorpicker2&#39;</span><span class="p">).</span><span class="nx">colorpicker</span><span class="p">({</span> <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;hex&#39;</span> <span class="p">});</span>
+</pre></div>
+              <p>
+                As a component
+              </p>
+              <div class="row" style="margin-bottom: 20px;">
+                <div class="col-sm-4">
+                  <div class="input-group color" data-color="rgb(200, 0, 0)" data-color-format="rgb" id="cp3">
+                    <input class="form-control" readonly="" type="text" value="rgb(200, 0, 0)"><span class="input-group-addon"><i style="background-color: rgb(200, 0, 0)"></i></span></input>
+                  </div>
+                </div>
+              </div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#colorpicker3&#39;</span><span class="p">).</span><span class="nx">colorpicker</span><span class="p">();</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="inputmasks">
+            <div class="heading">
+              Input Masks<a class="pull-right" href="https://github.com/RobinHerbots/jquery.inputmask" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <form action="#" class="form-horizontal">
+                <div class="form-group">
+                  <label class="control-label col-md-2">Date 1</label>
+                  <div class="col-md-3">
+                    <input class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" type="text">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Date 2</label>
+                  <div class="col-md-3">
+                    <input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" type="text">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Phone Number</label>
+                  <div class="col-md-3">
+                    <input class="form-control" data-inputmask="'mask': ['(999) 999-9999']" type="text">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Social Security #</label>
+                  <div class="col-md-3">
+                    <input class="form-control" data-inputmask="'mask': ['999-99-9999']" type="text">
+                  </div>
+                </div>
+              </form>
+              <p>
+                Define your masks in your javascript
+              </p><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#date&#39;</span><span class="p">).</span><span class="nx">inputmask</span><span class="p">(</span><span class="s1">&#39;d/m/y&#39;</span><span class="p">);</span>
+</pre></div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#phone&#39;</span><span class="p">).</span><span class="nx">inputmask</span><span class="p">(</span><span class="s1">&#39;mask&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;mask&#39;</span><span class="o">:</span> <span class="s1">&#39;(999) 999-9999&#39;</span><span class="p">});</span>
+</pre></div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tin&#39;</span><span class="p">).</span><span class="nx">inputmask</span><span class="p">({</span><span class="s1">&#39;mask&#39;</span><span class="o">:</span> <span class="s1">&#39;99-9999999&#39;</span><span class="p">});</span>
+</pre></div>
+              <p>
+                Or in your html
+              </p><div class="highlight"><pre><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">data-inputmask=</span><span class="s">&quot;&#39;alias&#39;: &#39;date&#39;&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">data-inputmask=</span><span class="s">&quot;&#39;mask&#39;: &#39;9&#39;, &#39;repeat&#39;: 10, &#39;greedy&#39; : false&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">data-inputmask=</span><span class="s">&quot;&#39;mask&#39;: &#39;99-9999999&#39;&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+              <p>
+                Then initialize the plugin in your javascript
+              </p><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;:input&#39;</span><span class="p">).</span><span class="nx">inputmask</span><span class="p">();</span>
+</pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-container fluid-height" id="fileupload-btn">
+            <div class="heading">
+              File Upload<a class="pull-right" href="http://jasny.github.com/bootstrap/javascript.html#fileupload" target="_blank">Full documentation</a>
+            </div>
+            <div class="widget-content padded">
+              <form action="#" class="form-horizontal">
+                <div class="form-group">
+                  <label class="control-label col-md-2">Custom File Upload</label>
+                  <div class="col-md-4">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="input-group">
+                        <div class="form-control">
+                          <i class="fa fa-file fileupload-exists"></i><span class="fileupload-preview"></span>
+                        </div>
+                        <div class="input-group-btn">
+                          <a class="btn btn-default fileupload-exists" data-dismiss="fileupload" href="#">Remove</a><span class="btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Without Input</label>
+                  <div class="col-md-4">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <span class="btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file"></span><span class="fileupload-preview"></span><button class="close fileupload-exists" data-dismiss="fileupload" style="float:none" type="button">&times;</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">With Preview</label>
+                  <div class="col-md-4">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new img-thumbnail" style="width: 200px; height: 150px;">
+                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                      </div>
+                      <div class="fileupload-preview fileupload-exists img-thumbnail" style="width: 200px; max-height: 150px"></div>
+                      <div>
+                        <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file"></span><a class="btn btn-default fileupload-exists" data-dismiss="fileupload" href="#">Remove</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.fileupload&#39;</span><span class="p">).</span><span class="nx">fileupload</span><span class="p">();</span>
+</pre></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <h2 id="credits">
+            Credits
+          </h2>
+        </div>
+        <div class="col-lg-12">
+          <div class="widget-container plugins fluid-height list">
+            <div class="widget-content">
+              <ul>
+                <li>
+                  <a target="_blank" href="http://www.oesmith.co.uk/morris.js/">Morris</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://jqvmap.com/">JQVMap</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://arshaw.com/fullcalendar/">Full Calendar</a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://datatables.net/">Datatables</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://omnipotent.net/jquery.sparkline/#s-about">Sparkline</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://rendro.github.io/easy-pie-chart/">Easy Pie Chart</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://isotope.metafizzy.co/">Isotope</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://fortawesome.github.io/Font-Awesome">Font Awesome</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://glyphicons.com/">Glyphicons</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://fancyapps.com/fancybox/">Fancybox</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://ivaynberg.github.io/select2/">Select2</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://twitter.github.io/typeahead.js/">Typeahead</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://www.bootstrap-switch.org/">Bootstrap Switch</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://jqueryvalidation.org/documentation/">jQuery Validation</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://www.eyecon.ro/bootstrap-datepicker/">Bootstrap Datepicker</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://jdewit.github.io/bootstrap-timepicker/">Bootstrap Timepicker</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://www.eyecon.ro/bootstrap-colorpicker">Bootstrap Colorpicker</a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/RobinHerbots/jquery.inputmask">jQuery Input Mask</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://jasny.github.com/bootstrap/javascript.html#fileupload">Jasney File Upload</a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/blueimp/jQuery-File-Upload">jQuery File Upload</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://www.dropzonejs.com/">Dropzone JS</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://vitalets.github.io/x-editable/index.html">X-Editable</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
