@@ -3,12 +3,25 @@
 @section('content')
 <div class="container">
 
+	<h1>
+        Edit $MODEL_NAME$
+    </h1>
+
     @include('common.errors')
 
-    {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->id], 'method' => 'patch']) !!}
+    <div class="widget-container fluid-height clearfix">
+        <div class="heading">
+            <i class="fa fa-th-list"></i>Edit $MODEL_NAME$
+        </div>
+        <div class="clearfix">
 
-        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+		    {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->id], 'method' => 'patch', 'class'=>'form-horizontal', 'role'=>'form']) !!}
 
-    {!! Form::close() !!}
+		        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+
+		    {!! Form::close() !!}
+		    
+		</div>
+	</div>
 </div>
 @endsection

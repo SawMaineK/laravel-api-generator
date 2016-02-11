@@ -2,13 +2,22 @@
 
 @section('content')
 <div class="container">
-
+    <h1>
+        New $MODEL_NAME$
+    </h1>
     @include('common.errors')
+    <div class="widget-container fluid-height clearfix">
+        <div class="heading">
+            <i class="fa fa-th-list"></i>New $MODEL_NAME$
+        </div>
+        <div class="clearfix">
+		    {!! Form::open(['route' => '$MODEL_NAME_PLURAL_CAMEL$.store', 'class'=>'form-horizontal', 'role'=>'form']) !!}
 
-    {!! Form::open(['route' => '$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
+		        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
 
-        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
-
-    {!! Form::close() !!}
+		    {!! Form::close() !!}
+        </div>
+    </div>
 </div>
 @endsection
+

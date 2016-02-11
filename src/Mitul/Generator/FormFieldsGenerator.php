@@ -31,9 +31,9 @@ class FormFieldsGenerator
 
     public static function text($templateData, $field)
     {
-        $textField = self::generateLabel($field);
+        //$textField = self::generateLabel($field);
 
-        $textField .= "\n\t{!! Form::text('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
+        $textField = "\n\t\t\t{!! Form::text('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
 
         $templateData = str_replace('$FIELD_INPUT$', $textField, $templateData);
 
@@ -44,9 +44,9 @@ class FormFieldsGenerator
 
     public static function textarea($templateData, $field)
     {
-        $textareaField = self::generateLabel($field);
+        //$textareaField = self::generateLabel($field);
 
-        $textareaField .= "\n\t{!! Form::textarea('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
+        $textareaField = "\n\t\t\t{!! Form::textarea('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
 
         $templateData = str_replace('$FIELD_INPUT$', $textareaField, $templateData);
 
@@ -57,9 +57,9 @@ class FormFieldsGenerator
 
     public static function password($templateData, $field)
     {
-        $textField = self::generateLabel($field);
+        //$textField = self::generateLabel($field);
 
-        $textField .= "\n\t{!! Form::password('\$FIELD_NAME\$', ['class' => 'form-control']) !!}";
+        $textField = "\n\t\t\t{!! Form::password('\$FIELD_NAME\$', ['class' => 'form-control']) !!}";
 
         $templateData = str_replace('$FIELD_INPUT$', $textField, $templateData);
 
@@ -70,9 +70,9 @@ class FormFieldsGenerator
 
     public static function email($templateData, $field)
     {
-        $textField = self::generateLabel($field);
+        //$textField = self::generateLabel($field);
 
-        $textField .= "\n\t{!! Form::email('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
+        $textField = "\n\t\t\t{!! Form::email('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
         $templateData = str_replace('$FIELD_INPUT$', $textField, $templateData);
 
         $templateData = self::replaceFieldVars($templateData, $field);
@@ -82,9 +82,9 @@ class FormFieldsGenerator
 
     public static function file($templateData, $field)
     {
-        $textField = self::generateLabel($field);
+        //$textField = self::generateLabel($field);
 
-        $textField .= "\n\t{!! Form::file('\$FIELD_NAME\$') !!}";
+        $textField = "\n\t\t\t{!! Form::file('\$FIELD_NAME\$') !!}";
 
         $templateData = str_replace('$FIELD_INPUT$', $textField, $templateData);
 
@@ -140,9 +140,9 @@ class FormFieldsGenerator
 
     public static function number($templateData, $field)
     {
-        $textField = self::generateLabel($field);
+        //$textField = self::generateLabel($field);
 
-        $textField .= "\n\t{!! Form::number('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
+        $textField = "\n\t\t\t{!! Form::number('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
         $templateData = str_replace('$FIELD_INPUT$', $textField, $templateData);
 
         $templateData = self::replaceFieldVars($templateData, $field);
@@ -152,9 +152,9 @@ class FormFieldsGenerator
 
     public static function date($templateData, $field)
     {
-        $textField = self::generateLabel($field);
+        //$textField = self::generateLabel($field);
 
-        $textField .= "\n\t{!! Form::date('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
+        $textField = "\n\t\t\t{!! Form::date('\$FIELD_NAME\$', null, ['class' => 'form-control']) !!}";
         $templateData = str_replace('$FIELD_INPUT$', $textField, $templateData);
 
         $templateData = self::replaceFieldVars($templateData, $field);
@@ -164,9 +164,9 @@ class FormFieldsGenerator
 
     public static function select($templateData, $field)
     {
-        $textField = self::generateLabel($field);
+        //$textField = self::generateLabel($field);
 
-        $textField .= "\n\t{!! Form::select('\$FIELD_NAME\$', \$INPUT_ARR\$, null, ['class' => 'form-control']) !!}";
+        $textField = "\n\t\t\t{!! Form::select('\$FIELD_NAME\$', \$INPUT_ARR\$, null, ['class' => 'form-control']) !!}";
         $textField = str_replace('$FIELD_NAME$', $field['fieldName'], $textField);
 
         if (count($field['typeOptions']) > 0) {

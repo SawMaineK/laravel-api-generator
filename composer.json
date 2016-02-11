@@ -1,5 +1,5 @@
 {
-    "name": "mitulgolakiya/laravel-api-generator",
+    "name": "sawmainek/laravel-api-generator",
     "description": "Laravel API/Scaffold/CRUD Generator from just one command with including Controller, Repository, Model, Migrations, routes.php update.",
     "keywords": [
         "laravel",
@@ -13,8 +13,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Mitul Golakiya",
-            "email": "me@mitul.me"
+            "name": "Saw Maine K",
+            "email": "sawmainek90@gmail.com"
         }
     ],
     "require": {
