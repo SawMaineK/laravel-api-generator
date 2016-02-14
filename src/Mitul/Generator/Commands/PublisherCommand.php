@@ -92,21 +92,11 @@ class PublisherCommand extends Command
      */
     public function publishCommonViews()
     {
-        $viewsPath              = __DIR__.'/../../../../views/common';
-
-        $viewsPathForTemplate   = __DIR__.'/../../../../views/template';
-
-        $viewsPathForLayout   = __DIR__.'/../../../../views/layout';
+        $viewsPath = __DIR__.'/../../../../views/common';
 
         $viewsCopyPath = base_path('resources/views/common');
 
-        $viewsCopyPathForTemplate = base_path('public/admin');
-
-        $viewsCopyPathForLayout = base_path('resources/views/layouts');
-
         $this->publishDirectory($viewsPath, $viewsCopyPath, 'common views');
-        $this->publishDirectory($viewsPathForTemplate, $viewsCopyPathForTemplate, 'template views');
-        $this->publishDirectory($viewsPathForLayout, $viewsCopyPathForLayout, 'layout views');
     }
 
     /**

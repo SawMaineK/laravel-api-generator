@@ -67,9 +67,11 @@ class ViewGenerator implements GeneratorProvider
                     $fieldsStr .= FormFieldsGenerator::file($fieldTemplate, $field)."\n\n";
                     break;
                 case 'checkbox':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('checkbox.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::checkbox($fieldTemplate, $field)."\n\n";
                     break;
                 case 'radio':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('radio.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::radio($fieldTemplate, $field)."\n\n";
                     break;
                 case 'number':

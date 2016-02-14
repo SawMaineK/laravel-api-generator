@@ -96,13 +96,13 @@ class FormFieldsGenerator
     public static function checkbox($templateData, $field)
     {
         $textField = "<div class=\"checkbox\">\n";
-        $textField .= "\t\t<label>";
+        $textField .= "\t\t\t\t\t\t<label>";
 
         $textField .= "{!! Form::checkbox('\$FIELD_NAME\$', 1, true) !!}";
         $textField .= '$FIELD_NAME_TITLE$';
 
         $textField .= '</label>';
-        $textField .= "\n\t</div>";
+        $textField .= "\n\t\t\t</div>";
 
         $templateData = str_replace('$FIELD_INPUT$', $textField, $templateData);
 
@@ -113,7 +113,7 @@ class FormFieldsGenerator
 
     public static function radio($templateData, $field)
     {
-        $textField = self::generateLabel($field);
+        //$textField = self::generateLabel($field);
 
         if (count($field['typeOptions']) > 0) {
             $arr = explode(',', $field['typeOptions']);
@@ -121,13 +121,13 @@ class FormFieldsGenerator
             foreach ($arr as $item) {
                 $label = Str::title(str_replace('_', ' ', $item));
 
-                $textField .= "\n\t<div class=\"radio-inline\">";
-                $textField .= "\n\t\t<label>";
+                $textField .= "\n\t\t\t<div class=\"radio-inline\">";
+                $textField .= "\n\t\t\t\t\t\t<label>";
 
-                $textField .= "\n\t\t\t{!! Form::radio('\$FIELD_NAME\$', '".$item."', null) !!} $label";
+                $textField .= "\n\t\t\t\t\t\t\t\t\t{!! Form::radio('\$FIELD_NAME\$', '".$item."', null) !!} <span>$label</span>";
 
-                $textField .= "\n\t\t</label>";
-                $textField .= "\n\t</div>";
+                $textField .= "\n\t\t\t\t\t\t</label>";
+                $textField .= "\n\t\t\t</div>";
             }
         }
 
