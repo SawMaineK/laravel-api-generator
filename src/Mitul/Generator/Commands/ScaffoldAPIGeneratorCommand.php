@@ -71,9 +71,7 @@ class ScaffoldAPIGeneratorCommand extends BaseCommand
         $routeGenerator = new RoutesGenerator($this->commandData);
         $routeGenerator->generate();
 
-        if ($this->confirm("\nDo you want to migrate database? [y|N]", false)) {
-            $this->call('migrate');
-        }
+        $this->call('migrate');
     }
 
     /**
