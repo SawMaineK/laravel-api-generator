@@ -8,6 +8,7 @@ use Mitul\Generator\Generators\Common\ModelGenerator;
 use Mitul\Generator\Generators\Common\RepositoryGenerator;
 use Mitul\Generator\Generators\Common\RequestGenerator;
 use Mitul\Generator\Generators\Common\RoutesGenerator;
+use Mitul\Generator\Generators\Common\MenuGenerator;
 use Mitul\Generator\Generators\Scaffold\ViewControllerGenerator;
 use Mitul\Generator\Generators\Scaffold\ViewGenerator;
 
@@ -68,6 +69,9 @@ class ScaffoldGeneratorCommand extends BaseCommand
 
         $routeGenerator = new RoutesGenerator($this->commandData);
         $routeGenerator->generate();
+
+        $menuGenerator = new MenuGenerator($this->commandData);
+        $menuGenerator->generate();
 
         $this->call('migrate');
     }

@@ -199,78 +199,13 @@
                   <li><a href="social.html">
                     <span aria-hidden="true" class="se7en-feed"></span>Social Feed</a>
                   </li>
-                  <li class="dropdown"><a data-toggle="dropdown" href="#">
-                    <span aria-hidden="true" class="se7en-star"></span>UI Features<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="buttons.html">
-                        <span class="notifications label label-warning">New</span>
-                        <p>
-                          Buttons
-                        </p></a>
-                        
-                      </li>
-                      <li><a href="fontawesome.html">
-                        <span class="notifications label label-warning">New</span>
-                        <p>
-                          Font Awesome Icons
-                        </p></a>
-                        
-                      </li>
-                      <li><a href="glyphicons.html">
-                        <span class="notifications label label-warning">New</span>
-                        <p>
-                          Glyphicons
-                        </p></a>
-                        
-                      </li>
-                      <li>
-                        <a href="components.html">Components</a>
-                      </li>
-                      <li>
-                        <a href="widgets.html">Widgets</a>
-                      </li>
-                      <li>
-                        <a href="typo.html">Typography</a>
-                      </li>
-                      <li>
-                        <a href="grid.html">Grid Layout</a>
-                      </li>
-                    </ul>
+                  <li class="dropdown"><a href="{!! route('generators.create') !!}">
+                    <span aria-hidden="true" class="se7en-star"></span>New Model</a>
                   </li>
                   <li class="dropdown"><a data-toggle="dropdown" href="#">
-                    <span aria-hidden="true" class="se7en-forms"></span>Forms<b class="caret"></b></a>
+                    <span aria-hidden="true" class="se7en-forms"></span>Models<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <li>
-                        <a href="form-components.html">Form Components</a>
-                      </li>
-                      <li>
-                        <a href="form-advanced.html">Advanced Forms</a>
-                      </li>
-                      <li><a href="xeditable.html">
-                        <span class="notifications label label-warning">New</span>
-                        <p>
-                          X-Editable
-                        </p></a>
-                        
-                      </li>
-                      <li><a href="file-upload.html">
-                        <div class="notifications label label-warning">
-                          New
-                        </div>
-                        <p>
-                          Multiple File Upload
-                        </p></a>
-                        
-                      </li>
-                      <li><a href="dropzone-file-upload.html">
-                        <div class="notifications label label-warning">
-                          New
-                        </div>
-                        <p>
-                          Dropzone File Upload
-                        </p></a>
-                        
-                      </li>
+                    @include('layouts.menus')
                     </ul>
                   </li>
                   <li class="dropdown"><a data-toggle="dropdown" class="current" href="#">

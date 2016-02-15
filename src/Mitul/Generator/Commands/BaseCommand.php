@@ -25,6 +25,7 @@ class BaseCommand extends Command
         $this->commandData->modelName = $this->argument('model');
         $this->commandData->useSoftDelete = $this->option('softDelete');
         $this->commandData->fieldsFile = $this->option('fieldsFile');
+        $this->commandData->fieldsData = $this->option('fieldsData');
         $this->commandData->paginate = $this->option('paginate');
         $this->commandData->tableName = $this->option('tableName');
         $this->commandData->skipMigration = $this->option('skipMigration');
@@ -70,7 +71,11 @@ class BaseCommand extends Command
         } elseif ($this->commandData->fromTable) {
             $tableFieldsGenerator = new TableFieldsGenerator($this->commandData->tableName);
             $this->commandData->inputFields = $tableFieldsGenerator->generateFieldsFromTable();
-        } else {
+        }elseif ($this->commandData->fieldsData) {
+            $fields = $this->commandData->fieldsData;
+            $this->commandData->inputFields = GeneratorUtils::validateFieldsFile($fields);
+        }
+         else {
             $this->commandData->inputFields = $this->commandData->getInputFields();
         }
     }
@@ -97,6 +102,7 @@ class BaseCommand extends Command
         return [
             ['softDelete', null, InputOption::VALUE_NONE, 'Use Soft Delete trait'],
             ['fieldsFile', null, InputOption::VALUE_REQUIRED, 'Fields input as json file'],
+            ['fieldsData', null, InputOption::VALUE_REQUIRED, 'Fields input as array'],
             ['paginate', null, InputOption::VALUE_OPTIONAL, 'Pagination for index.blade.php', 10],
             ['tableName', null, InputOption::VALUE_REQUIRED, 'Table Name'],
             ['skipMigration', null, InputOption::VALUE_NONE, 'Skip Migration generation'],

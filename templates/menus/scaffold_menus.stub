@@ -1,0 +1,6 @@
+<li>
+	<a href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.index') !!}">
+		<div class="notifications label label-warning">{!! App\Models\$MODEL_NAME$::count() !!}</div>
+		<p>$MODEL_NAME_PLURAL$</p>
+	</a>
+</li>
