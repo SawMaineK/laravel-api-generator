@@ -88,6 +88,8 @@ class ViewGenerator implements GeneratorProvider
 
         $templateData = $this->commandData->templatesHelper->getTemplate('fields.blade', $this->viewsPath);
 
+        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
+
         $templateData = str_replace('$FIELDS$', $fieldsStr, $templateData);
 
         $fileName = 'fields.blade.php';
