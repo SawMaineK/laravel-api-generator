@@ -31,6 +31,7 @@ class BaseCommand extends Command
         $this->commandData->skipMigration = $this->option('skipMigration');
         $this->commandData->fromTable = $this->option('fromTable');
         $this->commandData->rememberToken = $this->option('rememberToken');
+        $this->commandData->pointerModel = $this->option('pointerModel');
 
         if ($this->commandData->fromTable) {
             if (!$this->commandData->tableName) {
@@ -108,6 +109,7 @@ class BaseCommand extends Command
             ['skipMigration', null, InputOption::VALUE_NONE, 'Skip Migration generation'],
             ['fromTable', null, InputOption::VALUE_NONE, 'Generate from table'],
             ['rememberToken', null, InputOption::VALUE_NONE, 'Generate rememberToken field in migration'],
+            ['pointerModel', null, InputOption::VALUE_NONE, 'Generate model with pointer model'],
         ];
     }
 }

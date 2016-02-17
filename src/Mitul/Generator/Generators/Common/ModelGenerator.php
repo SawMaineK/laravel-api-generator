@@ -6,6 +6,7 @@ use Config;
 use Mitul\Generator\CommandData;
 use Mitul\Generator\Generators\GeneratorProvider;
 use Mitul\Generator\Utils\GeneratorUtils;
+use Illuminate\Support\Str;
 
 class ModelGenerator implements GeneratorProvider
 {
@@ -50,10 +51,14 @@ class ModelGenerator implements GeneratorProvider
             $templateData = str_replace('$SOFT_DELETE_DATES$', '', $templateData);
         }
 
+        if (!$this->commandData->pointerModel){
+            $templateData = str_replace('$POINTER_MODEL$', '', $templateData);
+        }
+
         $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
 
         $fillables = [];
-
+        
         foreach ($this->commandData->inputFields as $field) {
             $fillables[] = '"'.$field['fieldName'].'"';
         }
@@ -63,8 +68,29 @@ class ModelGenerator implements GeneratorProvider
         $templateData = str_replace('$RULES$', implode(",\n\t\t", $this->generateRules()), $templateData);
 
         $templateData = str_replace('$CAST$', implode(",\n\t\t", $this->generateCasts()), $templateData);
+        
+        $templateData = str_replace('$POINTER_MODEL$', $this->generatePointer(), $templateData);
 
         return $templateData;
+    }
+
+    private function generatePointer(){
+        $templatePointer = '';
+        foreach ($this->commandData->inputFields as $field) {
+            $fillables[] = '"'.$field['fieldName'].'"';
+            if($field['type'] == 'pointer'){
+                $templateData = $this->commandData->templatesHelper->getTemplate('PointerModel', 'common');
+                $arr = explode(',', $field['typeOptions']);
+                if(count($arr) > 0){
+                    $modelName = $arr[0];
+                    $templateData = str_replace('$MODEL_NAME$', $modelName, $templateData);
+                    $templateData = str_replace('$MODEL_NAME_CAMEL$', Str::camel($modelName), $templateData);
+                    $templatePointer .="\n\t".$templateData;
+                }
+
+            }
+        }
+        return $templatePointer;
     }
 
     private function generateRules()

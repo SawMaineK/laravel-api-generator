@@ -64,6 +64,7 @@ class ViewGenerator implements GeneratorProvider
                     $fieldsStr .= FormFieldsGenerator::email($fieldTemplate, $field)."\n\n";
                     break;
                 case 'file':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('file.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::file($fieldTemplate, $field)."\n\n";
                     break;
                 case 'checkbox':
@@ -78,6 +79,7 @@ class ViewGenerator implements GeneratorProvider
                     $fieldsStr .= FormFieldsGenerator::number($fieldTemplate, $field)."\n\n";
                     break;
                 case 'date':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('date.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::date($fieldTemplate, $field)."\n\n";
                     break;
                 case 'select':

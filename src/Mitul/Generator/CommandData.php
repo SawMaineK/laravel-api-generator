@@ -43,7 +43,13 @@ class CommandData
     public $rememberToken;
 
     /** @var  string */
+    public $pointerModel;
+
+    /** @var  string */
     public $fieldsFile;
+
+    /** @var array */
+    public $fieldsData = [];
 
     /** @var array */
     public $dynamicVars = [];

@@ -1,0 +1,23 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+<div class="row">
+	<div class="form-group{{ $errors->has('$FIELD_NAME$') ? ' has-error' : '' }}">
+	    {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$:',['class' => 'col-sm-4 col-lg-2 control-label']) !!}
+	    <div class="col-sm-6 col-lg-6"> 
+	        <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new img-thumbnail" style="width: 200px; height: 150px;">
+                	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                </div>
+                <div class="fileupload-preview fileupload-exists img-thumbnail" style="width: 200px; max-height: 150px"></div>
+                <div>
+                  	<span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span>$FIELD_INPUT$</span><a class="btn btn-default fileupload-exists" data-dismiss="fileupload" href="#">Remove</a>
+                </div>
+            </div>
+	        @if ($errors->has('$FIELD_NAME$'))
+	            <span class="help-block">
+	                <strong>{{ $errors->first('$FIELD_NAME$') }}</strong>
+	            </span>
+	        @endif
+	    </div>
+	</div>
+
+</div>
