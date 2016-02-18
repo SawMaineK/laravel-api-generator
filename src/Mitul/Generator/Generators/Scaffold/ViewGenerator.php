@@ -85,6 +85,10 @@ class ViewGenerator implements GeneratorProvider
                 case 'select':
                     $fieldsStr .= FormFieldsGenerator::select($fieldTemplate, $field)."\n\n";
                     break;
+                case 'pointer':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('pointer.blade', $this->viewsPath);
+                    $fieldsStr .= FormFieldsGenerator::pointer($fieldTemplate, $field)."\n\n";
+                    break;
             }
         }
 

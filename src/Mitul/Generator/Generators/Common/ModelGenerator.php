@@ -77,7 +77,6 @@ class ModelGenerator implements GeneratorProvider
     private function generatePointer(){
         $templatePointer = '';
         foreach ($this->commandData->inputFields as $field) {
-            $fillables[] = '"'.$field['fieldName'].'"';
             if($field['type'] == 'pointer'){
                 $templateData = $this->commandData->templatesHelper->getTemplate('PointerModel', 'common');
                 $arr = explode(',', $field['typeOptions']);
@@ -85,7 +84,7 @@ class ModelGenerator implements GeneratorProvider
                     $modelName = $arr[0];
                     $templateData = str_replace('$MODEL_NAME$', $modelName, $templateData);
                     $templateData = str_replace('$MODEL_NAME_CAMEL$', Str::camel($modelName), $templateData);
-                    $templatePointer .="\n\t".$templateData;
+                    $templatePointer .=$templateData."\n";
                 }
 
             }

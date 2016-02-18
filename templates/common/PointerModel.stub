@@ -1,7 +1,7 @@
-/**
- * Get the $MODEL_NAME_CAMEL$ pointer.
- */
-public function $MODEL_NAME_CAMEL$()
-{
-    return $this->belongsTo('App\Models\$MODEL_NAME$');
-}
+	/**
+	 * Get the $MODEL_NAME_CAMEL$ object.
+	 */
+	public function $MODEL_NAME_CAMEL$()
+	{
+	    return $this->belongsTo('App\Models\$MODEL_NAME$');
+	}

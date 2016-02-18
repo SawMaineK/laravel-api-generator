@@ -23,7 +23,10 @@ class ViewControllerGenerator implements GeneratorProvider
 
     public function generate()
     {
-        $templateData = $this->commandData->templatesHelper->getTemplate('Controller', 'scaffold');
+        if ($this->commandData->pointerModel)
+            $templateData = $this->commandData->templatesHelper->getTemplate('PointerController', 'scaffold');
+        else
+            $templateData = $this->commandData->templatesHelper->getTemplate('Controller', 'scaffold');
 
         $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
 
@@ -33,6 +36,8 @@ class ViewControllerGenerator implements GeneratorProvider
             $templateData = str_replace('$RENDER_TYPE$', 'all()', $templateData);
         }
 
+        $templateData = $this->generatePointerModel($templateData);
+
         $fileName = $this->commandData->modelName.'Controller.php';
 
         $path = $this->path.$fileName;
@@ -40,5 +45,27 @@ class ViewControllerGenerator implements GeneratorProvider
         $this->commandData->fileHelper->writeFile($path, $templateData);
         $this->commandData->commandObj->comment("\nController created: ");
         $this->commandData->commandObj->info($fileName);
+    }
+
+    private function generatePointerModel($templateData){
+        $templateImportModel         = [];
+        $templatePointerModel        = [];
+        $templatePointerModelArr     = [];
+        foreach ($this->commandData->inputFields as $field) {
+            if($field['type'] == 'pointer'){
+                $arr = explode(',', $field['typeOptions']);
+                if(count($arr) > 0){
+                    $modelName = $arr[0];
+                    $templateImportModel[]      = "use App\Models\\".$modelName.";";
+                    $templatePointerModel[]     = "$".Str::camel($modelName)."=".$modelName."::all();";
+                    $templatePointerModelArr[]  = "'".Str::camel($modelName)."'=>$".Str::camel($modelName);
+                    $templateData = str_replace('$USE_POINTER_MODELS$', implode("\n", $templateImportModel), $templateData);
+                    $templateData = str_replace('$POINTER_MODELS$', implode("\n\t\t\t", $templatePointerModel), $templateData);
+                    $templateData = str_replace('$POINTER_MODEL_ARR$', implode(", ", $templatePointerModelArr), $templateData);
+                }
+
+            }
+        }
+        return $templateData;
     }
 }
