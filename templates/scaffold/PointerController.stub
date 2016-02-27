@@ -92,6 +92,8 @@ class $MODEL_NAME$Controller extends AppBaseController
 	 */
 	public function edit($id)
 	{
+		$POINTER_MODELS$
+
 		$$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->find($id);
 
 		if(empty($$MODEL_NAME_CAMEL$))
@@ -101,7 +103,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 			return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
-		return view('$MODEL_NAME_PLURAL_CAMEL$.edit')->with('$MODEL_NAME_CAMEL$', $$MODEL_NAME_CAMEL$);
+		return view('$MODEL_NAME_PLURAL_CAMEL$.edit')->with([$POINTER_MODEL_EDITARR$]);
 	}
 
 	/**

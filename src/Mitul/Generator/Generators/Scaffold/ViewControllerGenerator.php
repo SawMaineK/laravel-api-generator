@@ -29,7 +29,6 @@ class ViewControllerGenerator implements GeneratorProvider
         else
             $templateData = $this->commandData->templatesHelper->getTemplate('Controller', 'scaffold');
 
-        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
 
         if ($this->commandData->paginate) {
             $templateData = str_replace('$RENDER_TYPE$', 'paginate('.$this->commandData->paginate.')', $templateData);
@@ -38,6 +37,8 @@ class ViewControllerGenerator implements GeneratorProvider
         }
 
         $templateData = $this->generatePointerModel($templateData);
+        
+        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
 
         $fileName = $this->commandData->modelName.'Controller.php';
 
@@ -72,6 +73,8 @@ class ViewControllerGenerator implements GeneratorProvider
         $templateData = str_replace('$USE_POINTER_MODELS$', implode("\n", $templateImportModel), $templateData);
         $templateData = str_replace('$POINTER_MODELS$', implode("\n", $templatePointerModel), $templateData);
         $templateData = str_replace('$POINTER_MODEL_ARR$', implode(", ", $templatePointerModelArr), $templateData);
+        $templatePointerModelArr[]  = "'$MODEL_NAME_CAMEL$'=>$$MODEL_NAME_CAMEL$";
+        $templateData = str_replace('$POINTER_MODEL_EDITARR$', implode(", ", $templatePointerModelArr), $templateData);
         return $templateData;
     }
 }
