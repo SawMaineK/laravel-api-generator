@@ -1,0 +1,5 @@
+		$$POINTER_MODEL_NAME_CAMEL$=$POINTER_MODEL_NAME::all();
+		$$POINTER_MODEL_NAME_CAMEL_PLURAL$ = [];
+		foreach ($$POINTER_MODEL_NAME_CAMEL$ as $key => $value) {
+			$$POINTER_MODEL_NAME_CAMEL_PLURAL$[$value->id] = $value->$POINTER__MODELVAL$;
+		}

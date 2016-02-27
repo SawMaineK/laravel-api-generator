@@ -195,9 +195,13 @@ class FormFieldsGenerator
     public static function pointer($templateData, $field)
     {
         if (count($field['typeOptions']) > 0) {
+
             $arr = explode(',', $field['typeOptions']);
-            $templateData = str_replace('$POINTER_MODEL_NAME_CAMEL$', Str::camel($arr[0]), $templateData);
-            $templateData = str_replace('$POINTER__MODELVAL$', $arr[1], $templateData);
+
+            $templateData = str_replace('$POINTER_MODEL_NAME_CAMEL_PLURAL$', Str::camel(Str::plural($this->modelName)), $templateData);
+
+            $templateData = self::replaceFieldVars($templateData, $field);
+
         }
 
         return $templateData;

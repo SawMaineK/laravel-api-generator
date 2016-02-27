@@ -3,6 +3,7 @@
 namespace Mitul\Generator\Generators\Scaffold;
 
 use Config;
+use Illuminate\Support\Str;
 use Mitul\Generator\CommandData;
 use Mitul\Generator\Generators\GeneratorProvider;
 use Mitul\Generator\Utils\GeneratorUtils;
@@ -57,15 +58,20 @@ class ViewControllerGenerator implements GeneratorProvider
                 if(count($arr) > 0){
                     $modelName = $arr[0];
                     $templateImportModel[]      = "use App\Models\\".$modelName.";";
-                    $templatePointerModel[]     = "$".Str::camel($modelName)."=".$modelName."::all();";
-                    $templatePointerModelArr[]  = "'".Str::camel($modelName)."'=>$".Str::camel($modelName);
-                    $templateData = str_replace('$USE_POINTER_MODELS$', implode("\n", $templateImportModel), $templateData);
-                    $templateData = str_replace('$POINTER_MODELS$', implode("\n\t\t\t", $templatePointerModel), $templateData);
-                    $templateData = str_replace('$POINTER_MODEL_ARR$', implode(", ", $templatePointerModelArr), $templateData);
+                    $templatePointer            = $this->commandData->templatesHelper->getTemplate('Pointer', 'scaffold');
+                    $templatePointer            = str_replace('$POINTER_MODEL_NAME$', $modelName, $templatePointer);
+                    $templatePointer            = str_replace('$POINTER_MODEL_NAME_CAMEL$', Str::camel($this->modelName), $templatePointer);
+                    $templatePointer            = str_replace('$POINTER_MODEL_NAME_CAMEL_PLURAL$', Str::camel(Str::plural($this->modelName)), $templatePointer);
+                    $templatePointer            = str_replace('$POINTER__MODELVAL$', $arr[1], $templatePointer);
+                    $templatePointerModel[]     = $templatePointer;
+                    $templatePointerModelArr[]  = "'".Str::camel(Str::plural($this->modelName))."'=>$".Str::camel($modelName);
                 }
 
             }
         }
+        $templateData = str_replace('$USE_POINTER_MODELS$', implode("\n", $templateImportModel), $templateData);
+        $templateData = str_replace('$POINTER_MODELS$', implode("\n", $templatePointerModel), $templateData);
+        $templateData = str_replace('$POINTER_MODEL_ARR$', implode(", ", $templatePointerModelArr), $templateData);
         return $templateData;
     }
 }
