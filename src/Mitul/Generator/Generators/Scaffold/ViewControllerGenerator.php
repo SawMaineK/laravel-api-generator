@@ -61,11 +61,11 @@ class ViewControllerGenerator implements GeneratorProvider
                     $templateImportModel[]      = "use App\Models\\".$modelName.";";
                     $templatePointer            = $this->commandData->templatesHelper->getTemplate('Pointer', 'scaffold');
                     $templatePointer            = str_replace('$POINTER_MODEL_NAME$', $modelName, $templatePointer);
-                    $templatePointer            = str_replace('$POINTER_MODEL_NAME_CAMEL$', Str::camel($this->modelName), $templatePointer);
-                    $templatePointer            = str_replace('$POINTER_MODEL_NAME_CAMEL_PLURAL$', Str::camel(Str::plural($this->modelName)), $templatePointer);
+                    $templatePointer            = str_replace('$POINTER_MODEL_NAME_CAMEL$', Str::camel($modelName), $templatePointer);
+                    $templatePointer            = str_replace('$POINTER_MODEL_NAME_CAMEL_PLURAL$', Str::camel(Str::plural($modelName)), $templatePointer);
                     $templatePointer            = str_replace('$POINTER__MODELVAL$', $arr[1], $templatePointer);
                     $templatePointerModel[]     = $templatePointer;
-                    $templatePointerModelArr[]  = "'".Str::camel(Str::plural($this->modelName))."'=>$".Str::camel($modelName);
+                    $templatePointerModelArr[]  = "'".Str::camel(Str::plural($modelName))."'=>$".Str::camel(Str::plural($modelName));
                 }
 
             }
@@ -73,7 +73,7 @@ class ViewControllerGenerator implements GeneratorProvider
         $templateData = str_replace('$USE_POINTER_MODELS$', implode("\n", $templateImportModel), $templateData);
         $templateData = str_replace('$POINTER_MODELS$', implode("\n", $templatePointerModel), $templateData);
         $templateData = str_replace('$POINTER_MODEL_ARR$', implode(", ", $templatePointerModelArr), $templateData);
-        $templatePointerModelArr[]  = "'$MODEL_NAME_CAMEL$'=>$$MODEL_NAME_CAMEL$";
+        $templatePointerModelArr[]  = '\'$MODEL_NAME_CAMEL$\'=>$$MODEL_NAME_CAMEL$';
         $templateData = str_replace('$POINTER_MODEL_EDITARR$', implode(", ", $templatePointerModelArr), $templateData);
         return $templateData;
     }

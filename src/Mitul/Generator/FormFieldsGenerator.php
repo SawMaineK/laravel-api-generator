@@ -198,7 +198,7 @@ class FormFieldsGenerator
 
             $arr = explode(',', $field['typeOptions']);
 
-            $templateData = str_replace('$POINTER_MODEL_NAME_CAMEL_PLURAL$', Str::camel(Str::plural($this->modelName)), $templateData);
+            $templateData = str_replace('$POINTER_MODEL_NAME_CAMEL_PLURAL$', Str::camel(Str::plural($arr[0])), $templateData);
 
             $templateData = self::replaceFieldVars($templateData, $field);
 
