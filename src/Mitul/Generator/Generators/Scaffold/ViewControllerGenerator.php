@@ -50,6 +50,7 @@ class ViewControllerGenerator implements GeneratorProvider
     }
 
     private function generatePointerModel($templateData){
+        $templatePointerRelationship = [];
         $templateImportModel         = [];
         $templatePointerModel        = [];
         $templatePointerModelArr     = [];
@@ -66,6 +67,7 @@ class ViewControllerGenerator implements GeneratorProvider
                     $templatePointer            = str_replace('$POINTER__MODELVAL$', $arr[1], $templatePointer);
                     $templatePointerModel[]     = $templatePointer;
                     $templatePointerModelArr[]  = "'".Str::camel(Str::plural($modelName))."'=>$".Str::camel(Str::plural($modelName));
+                    $templatePointerRelationship[] = "'".Str::camel($modelName)."'".;
                 }
 
             }
@@ -75,6 +77,7 @@ class ViewControllerGenerator implements GeneratorProvider
         $templateData = str_replace('$POINTER_MODEL_ARR$', implode(", ", $templatePointerModelArr), $templateData);
         $templatePointerModelArr[]  = '\'$MODEL_NAME_CAMEL$\'=>$$MODEL_NAME_CAMEL$';
         $templateData = str_replace('$POINTER_MODEL_EDITARR$', implode(", ", $templatePointerModelArr), $templateData);
+        $templateData = str_replace('$POINTER_MODELS_RELATIONSHIP$', implode(", ", $templatePointerRelationship), $templateData);
         return $templateData;
     }
 }

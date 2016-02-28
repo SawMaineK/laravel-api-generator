@@ -173,7 +173,17 @@ class ViewGenerator implements GeneratorProvider
         $tableBodyFields = '';
 
         foreach ($this->commandData->inputFields as $field) {
-            $tableBodyFields .= '<td>{!! $'.$this->commandData->modelNameCamel.'->'.$field['fieldName']." !!}</td>\n\t\t\t";
+            if($field['type'] == 'pointer'){
+                $arr = explode(',', $field['typeOptions']);
+                if(count($arr) > 0){
+                    $modelName = $arr[0];
+                    $modelNameVal = $arr[1];
+                    $tableBodyFields .= '<td>{!! $'.$this->commandData->modelNameCamel.'->'.Str::camel($modelName).'->'.$modelNameVal." !!}</td>\n\t\t\t";
+                }
+            }
+            else
+                $tableBodyFields .= '<td>{!! $'.$this->commandData->modelNameCamel.'->'.$field['fieldName']." !!}</td>\n\t\t\t";
+
         }
 
         $tableBodyFields = trim($tableBodyFields);

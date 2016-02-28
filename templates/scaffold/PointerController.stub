@@ -7,6 +7,7 @@ use $NAMESPACE_REPOSITORY$\$MODEL_NAME$Repository;
 use Flash;
 use $BASE_CONTROLLER$ as AppBaseController;
 use Response;
+use App\Models\$MODEL_NAME$;
 $USE_POINTER_MODELS$
 
 class $MODEL_NAME$Controller extends AppBaseController
@@ -27,7 +28,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 	 */
 	public function index()
 	{
-		$$MODEL_NAME_PLURAL_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->$RENDER_TYPE$;
+		$$MODEL_NAME_PLURAL_CAMEL$ = $MODEL_NAME$::with([$POINTER_MODELS_RELATIONSHIP$])->$RENDER_TYPE$;
 
 		return view('$MODEL_NAME_PLURAL_CAMEL$.index')
 			->with('$MODEL_NAME_PLURAL_CAMEL$', $$MODEL_NAME_PLURAL_CAMEL$);
