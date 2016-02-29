@@ -37,6 +37,7 @@ class PublisherCommand extends Command
         if ($this->option('all')) {
             $this->publishCommonViews();
             $this->publishAPIRoutes();
+            $this->publishScaffoldRoutes();
             $this->initAPIRoutes();
             $this->publishTemplates();
             $this->publishAppBaseController();
@@ -139,6 +140,18 @@ class PublisherCommand extends Command
         $apiRoutesPath = Config::get('generator.path_api_routes', app_path('Http/api_routes.php'));
 
         $this->publishFile($routesPath, $apiRoutesPath, 'api_routes.php');
+    }
+
+    /**
+     * Publishes scaffold_routes.php.
+     */
+    public function publishScaffoldRoutes()
+    {
+        $routesPath = __DIR__.'/../../../../templates/routes/scaffold_routes.stub';
+
+        $apiRoutesPath = Config::get('generator.path_scaffold_routes', app_path('Http/scaffold_routes.php'));
+
+        $this->publishFile($routesPath, $apiRoutesPath, 'scaffold_routes.php');
     }
 
     public function publishFile($sourceFile, $destinationFile, $fileName)

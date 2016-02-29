@@ -40,6 +40,8 @@ return [
 
     'path_api_routes'          => app_path('Http/api_routes.php'),
 
+    'path_scaffold_routes'     => app_path('Http/scaffold_routes.php'),
+
     /*
     |--------------------------------------------------------------------------
     | Namespace for classes

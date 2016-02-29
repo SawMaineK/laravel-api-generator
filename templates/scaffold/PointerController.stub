@@ -60,7 +60,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 
 		Flash::success('$MODEL_NAME$ saved successfully.');
 
-		return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+		return redirect(route('admin.$MODEL_NAME_PLURAL_CAMEL$.index'));
 	}
 
 	/**
@@ -78,7 +78,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 		{
 			Flash::error('$MODEL_NAME$ not found');
 
-			return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+			return redirect(route('admin.$MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
 		return view('$MODEL_NAME_PLURAL_CAMEL$.show')->with('$MODEL_NAME_CAMEL$', $$MODEL_NAME_CAMEL$);
@@ -101,7 +101,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 		{
 			Flash::error('$MODEL_NAME$ not found');
 
-			return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+			return redirect(route('admin.$MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
 		return view('$MODEL_NAME_PLURAL_CAMEL$.edit')->with([$POINTER_MODEL_EDITARR$]);
@@ -123,14 +123,14 @@ class $MODEL_NAME$Controller extends AppBaseController
 		{
 			Flash::error('$MODEL_NAME$ not found');
 
-			return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+			return redirect(route('admin.$MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
 		$this->$MODEL_NAME_CAMEL$Repository->updateRich($request->all(), $id);
 
 		Flash::success('$MODEL_NAME$ updated successfully.');
 
-		return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+		return redirect(route('admin.$MODEL_NAME_PLURAL_CAMEL$.index'));
 	}
 
 	/**
@@ -148,13 +148,13 @@ class $MODEL_NAME$Controller extends AppBaseController
 		{
 			Flash::error('$MODEL_NAME$ not found');
 
-			return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+			return redirect(route('admin.$MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
 		$this->$MODEL_NAME_CAMEL$Repository->delete($id);
 
 		Flash::success('$MODEL_NAME$ deleted successfully.');
 
-		return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+		return redirect(route('admin.$MODEL_NAME_PLURAL_CAMEL$.index'));
 	}
 }

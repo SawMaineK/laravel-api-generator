@@ -65,7 +65,7 @@ class ViewControllerGenerator implements GeneratorProvider
                     $templatePointer            = str_replace('$POINTER_MODEL_NAME_CAMEL$', Str::camel($modelName), $templatePointer);
                     $templatePointer            = str_replace('$POINTER_MODEL_NAME_CAMEL_PLURAL$', Str::camel(Str::plural($modelName)), $templatePointer);
                     $templatePointer            = str_replace('$POINTER__MODELVAL$', $arr[1], $templatePointer);
-                    $templatePointerModel[]     = "\t".$templatePointer;
+                    $templatePointerModel[]     = $templatePointer;
                     $templatePointerModelArr[]  = "'".Str::camel(Str::plural($modelName))."'=>$".Str::camel(Str::plural($modelName));
                     $templatePointerRelationship[] = "'".Str::camel($modelName)."'";
                 }

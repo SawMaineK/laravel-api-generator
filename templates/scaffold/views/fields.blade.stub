@@ -4,7 +4,7 @@ $FIELDS$
 	<div class="form-group">
 		<div class="col-sm-6 col-sm-offset-4 col-md-offset-4 col-lg-offset-2">
 		    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-		    <a class="btn btn-default-outline" href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.index') !!}">Cancel</a>
+		    <a class="btn btn-default-outline" href="{!! route('admin.$MODEL_NAME_PLURAL_CAMEL$.index') !!}">Cancel</a>
 	    </div>
 	</div>
 </div>

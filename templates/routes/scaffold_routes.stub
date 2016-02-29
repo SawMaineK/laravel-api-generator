@@ -1,8 +1,13 @@
-Route::group(['middleware' => ['web']], function () {
-	Route::resource('$MODEL_NAME_PLURAL_CAMEL$', '$MODEL_NAME$Controller');
+<?php
 
-	Route::get('$MODEL_NAME_PLURAL_CAMEL$/{id}/delete', [
-	    'as' => '$MODEL_NAME_PLURAL_CAMEL$.delete',
-	    'uses' => '$MODEL_NAME$Controller@destroy',
-	]);
-});
+/*
+|--------------------------------------------------------------------------
+| Scaffold Routes
+|--------------------------------------------------------------------------
+|
+| Here is where all scaffold routes are defined.
+|
+*/
+
+
+
