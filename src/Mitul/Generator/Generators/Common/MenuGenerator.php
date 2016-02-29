@@ -17,7 +17,7 @@ class MenuGenerator implements GeneratorProvider
     public function __construct($commandData)
     {
         $this->commandData = $commandData;
-        $this->path = base_path('resources\views\layouts\menus.blade.php');
+        $this->path = base_path('resources/views/layouts/menus.blade.php');
     }
 
     public function generate()
