@@ -96,10 +96,10 @@ class FormFieldsGenerator
     public static function checkbox($templateData, $field)
     {
         $textField = "<div class=\"checkbox\">\n";
-        $textField .= "\t\t\t\t\t\t<label>";
+        $textField .= "\t\t\t\t<label>";
 
         $textField .= "{!! Form::checkbox('\$FIELD_NAME\$', 1, true) !!}";
-        $textField .= '$FIELD_NAME_TITLE$';
+        $textField .= '<span>$FIELD_NAME_TITLE$</span>';
 
         $textField .= '</label>';
         $textField .= "\n\t\t\t</div>";
