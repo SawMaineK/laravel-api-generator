@@ -11,3 +11,15 @@ Route::group(['prefix' => '$API_PREFIX$', 'namespace' => 'API'], function ()
         require Config::get('generator.path_api_routes');
 	});
 });
+
+/*
+|--------------------------------------------------------------------------
+| Admin Soft routes
+|--------------------------------------------------------------------------
+*/
+
+Route::group(['prefix' => '$ADMIN_PREFIX$'], function ()
+{    
+    require Config::get('generator.path_scaffold_routes');
+});
+

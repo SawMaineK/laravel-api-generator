@@ -88,6 +88,8 @@ return [
     |
     */
 
+    'admin_prefix'             => 'admin',
+
     'api_prefix'               => 'api',
 
     'api_version'              => 'v1',

@@ -48,6 +48,7 @@ class PublisherCommand extends Command
         } else {
             $this->publishCommonViews();
             $this->publishAPIRoutes();
+            $this->publishScaffoldRoutes();
             $this->initAPIRoutes();
         }
     }
@@ -93,11 +94,23 @@ class PublisherCommand extends Command
      */
     public function publishCommonViews()
     {
+        $controllerPath         = __DIR__.'/../../../../controllers';
+
+        $requestPath            = __DIR__.'/../../../../requests';
+
+        $generatorPath          = __DIR__.'/../../../../views/generators';
+
         $viewsPath              = __DIR__.'/../../../../views/common';
 
         $viewsPathForTemplate   = __DIR__.'/../../../../views/template';
 
-        $viewsPathForLayout   = __DIR__.'/../../../../views/layout';
+        $viewsPathForLayout     = __DIR__.'/../../../../views/layout';
+
+        $controllerCopyPath = base_path('app/Http/Controllers');
+
+        $requestCopyPath = base_path('app/Http/Requests');
+
+        $generatorCopyPath = base_path('resources/views/generators');
 
         $viewsCopyPath = base_path('resources/views/common');
 
@@ -105,6 +118,10 @@ class PublisherCommand extends Command
 
         $viewsCopyPathForLayout = base_path('resources/views/layouts');
 
+        $this->publishDirectory($controllerPath, $controllerCopyPath, 'generator controller');
+        $this->publishDirectory($requestPath, $requestCopyPath, 'generator requests');
+        $this->publishDirectory($generatorPath, $generatorCopyPath, 'generator views');
+        $this->publishDirectory($viewsPath, $viewsCopyPath, 'common views');
         $this->publishDirectory($viewsPath, $viewsCopyPath, 'common views');
         $this->publishDirectory($viewsPathForTemplate, $viewsCopyPathForTemplate, 'template views');
         $this->publishDirectory($viewsPathForLayout, $viewsCopyPathForLayout, 'layout views');
@@ -226,11 +243,13 @@ class PublisherCommand extends Command
     {
         $apiVersion = Config::get('generator.api_version');
         $apiPrefix = Config::get('generator.api_prefix');
+        $adminPrefix = Config::get('generator.admin_prefix');
         $apiNamespace = Config::get('generator.namespace_api_controller');
 
         $templateData = str_replace('$API_VERSION$', $apiVersion, $templateData);
         $templateData = str_replace('$NAMESPACE_API_CONTROLLER$', $apiNamespace, $templateData);
         $templateData = str_replace('$API_PREFIX$', $apiPrefix, $templateData);
+        $templateData = str_replace('$ADMIN_PREFIX$', $adminPrefix, $templateData);
 
         return $templateData;
     }

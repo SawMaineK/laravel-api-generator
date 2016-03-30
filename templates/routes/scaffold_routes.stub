@@ -9,5 +9,9 @@
 |
 */
 
+Route::resource('generators', 'GeneratorController');
 
-
+Route::get('generators/{id}/delete', [
+    'as' => 'generators.delete',
+    'uses' => 'GeneratorController@destroy',
+]);
