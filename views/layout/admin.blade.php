@@ -195,7 +195,7 @@
               <div class="nav-collapse">
                 <ul class="nav">
                   <li>
-                    <a href="/"><span aria-hidden="true" class="se7en-home"></span>Dashboard</a>
+                    <a href="#"><span aria-hidden="true" class="se7en-home"></span>Dashboard</a>
                   </li>
                   <li><a href="#">
                     <span aria-hidden="true" class="se7en-feed"></span>Docs</a>
@@ -212,7 +212,7 @@
                   <li><a href="charts.html">
                     <span aria-hidden="true" class="se7en-charts"></span>Charts</a>
                   </li>
-                  <li><a href="{!! route('admin.api.index') !!}">
+                  <li><a href="#">
                     <span aria-hidden="true" class="se7en-gallery"></span>APIs</a>
                   </li>
                 </ul>
