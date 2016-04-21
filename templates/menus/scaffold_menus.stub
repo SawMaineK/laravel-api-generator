@@ -1,6 +1,6 @@
 <li>
 	<a href="{{ asset('admin/$MODEL_NAME_PLURAL_CAMEL$') }}">
 		<div class="notifications label label-warning">{!! App\Models\$MODEL_NAME$::count() !!}</div>
-		<p>$MODEL_NAME_PLURAL$</p>
+		<p>@lang('$MODEL_NAME_PLURAL_CAMEL$/index.model_name')</p>
 	</a>
 </li>

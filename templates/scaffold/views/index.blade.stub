@@ -8,12 +8,12 @@
 
         <div class="widget-container fluid-height clearfix">
             <div class="heading">
-                <h1 class="pull-left">$MODEL_NAME_PLURAL$</h1>
-                <a class="btn btn-primary pull-right" href="{!! route('admin.$MODEL_NAME_PLURAL_CAMEL$.create') !!}">Add New</a>
+                <h1 class="pull-left">@lang('$MODEL_NAME_PLURAL_CAMEL$/index.model_name')</h1>
+                <a class="btn btn-primary pull-right" href="{!! route('admin.$MODEL_NAME_PLURAL_CAMEL$.create') !!}">@lang('$MODEL_NAME_PLURAL_CAMEL$/index.add_new')</a>
             </div>
             <div class="widget-content padded clearfix">
                 @if($$MODEL_NAME_PLURAL_CAMEL$->isEmpty())
-                    <div class="well text-center">No $MODEL_NAME_PLURAL$ found.</div>
+                    <div class="well text-center">@lang('$MODEL_NAME_PLURAL_CAMEL$/index.no_model_found')</div>
                 @else
                     <div class="table-responsive">
                         @include('$MODEL_NAME_PLURAL_CAMEL$.table')

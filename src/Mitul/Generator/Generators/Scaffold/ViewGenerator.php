@@ -18,19 +18,30 @@ class ViewGenerator implements GeneratorProvider
     private $path;
 
     /** @var string */
+    private $path_lang;
+
+    /** @var string */
     private $viewsPath;
+
+    /** @var string */
+    private $langsPath;
 
     public function __construct($commandData)
     {
         $this->commandData = $commandData;
         $this->path = Config::get('generator.path_views', base_path('resources/views')).'/'.$this->commandData->modelNamePluralCamel.'/';
+        $this->path_lang = base_path('resources/lang/en').'/'.$this->commandData->modelNamePluralCamel.'/';
         $this->viewsPath = 'scaffold/views';
+        $this->langsPath = 'scaffold/lang';
     }
 
     public function generate()
     {
         if (!file_exists($this->path)) {
             mkdir($this->path, 0755, true);
+        }
+        if (!file_exists($this->path_lang)) {
+            mkdir($this->path_lang, 0755, true);
         }
 
         $this->commandData->commandObj->comment("\nViews created: ");
@@ -48,8 +59,10 @@ class ViewGenerator implements GeneratorProvider
         $fieldTemplate = $this->commandData->templatesHelper->getTemplate('field.blade', $this->viewsPath);
 
         $fieldsStr = '';
+        $fieldsLang = '';
 
         foreach ($this->commandData->inputFields as $field) {
+            $fieldsLang .="'".$field['fieldName']."'=>'". Str::title(str_replace('_', ' ', $field['fieldName'])) ."',\n";
             switch ($field['type']) {
                 case 'text':
                     $fieldsStr .= FormFieldsGenerator::text($fieldTemplate, $field)."\n\n";
@@ -94,16 +107,26 @@ class ViewGenerator implements GeneratorProvider
 
         $templateData = $this->commandData->templatesHelper->getTemplate('fields.blade', $this->viewsPath);
 
-        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
+        $templateLang = $this->commandData->templatesHelper->getTemplate('fields', $this->langsPath);
 
         $templateData = str_replace('$FIELDS$', $fieldsStr, $templateData);
+
+        $templateLang = str_replace('$FIELDS_LANG$', $fieldsLang, $templateLang);
+
+        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
+
+        $templateLang = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateLang);
 
         $fileName = 'fields.blade.php';
 
         $path = $this->path.$fileName;
+        $pathLang = $this->path_lang.str_replace('.blade', '', $fileName);
 
         $this->commandData->fileHelper->writeFile($path, $templateData);
         $this->commandData->commandObj->info('field.blade.php created');
+
+        $this->commandData->fileHelper->writeFile($pathLang, $templateLang);
+        $this->commandData->commandObj->info('fields.php created');
     }
 
     private function generateShowFields()
@@ -130,9 +153,13 @@ class ViewGenerator implements GeneratorProvider
 
     private function generateIndex()
     {
+        
+        $langStr ="'model_name'=>'".$this->commandData->modelNamePlural."',\n";
+        $langStr .="'add_new'=>'Add New',\n";
+        $langStr .="'no_model_found'=>'No ".$this->commandData->modelNamePlural." found.',\n";
+        
         $templateData = $this->commandData->templatesHelper->getTemplate('index.blade', $this->viewsPath);
-
-        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
+        $templateLang = $this->commandData->templatesHelper->getTemplate('index', $this->langsPath);
 
         if ($this->commandData->paginate) {
             $paginateTemplate = $this->commandData->templatesHelper->getTemplate('paginate.blade', 'scaffold/views');
@@ -144,31 +171,48 @@ class ViewGenerator implements GeneratorProvider
             $templateData = str_replace('$PAGINATE$', '', $templateData);
         }
 
+        $templateLang = str_replace('$INDEX_LANG$', $langStr, $templateLang);
+
+        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
+        $templateLang = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateLang);
+
         $fileName = 'index.blade.php';
 
         $path = $this->path.$fileName;
+        $pathLang = $this->path_lang.str_replace('.blade', '', $fileName);
 
         $this->commandData->fileHelper->writeFile($path, $templateData);
         $this->commandData->commandObj->info('index.blade.php created');
+
+        $this->commandData->fileHelper->writeFile($pathLang, $templateLang);
+        $this->commandData->commandObj->info('index.php created');
     }
 
     private function generateTable()
     {
-        $templateData = $this->commandData->templatesHelper->getTemplate('table.blade', $this->viewsPath);
+        $fieldsLang = '';
 
-        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
+        $templateData = $this->commandData->templatesHelper->getTemplate('table.blade', $this->viewsPath);
+        $templateLang = $this->commandData->templatesHelper->getTemplate('table', $this->langsPath);
+
+        
 
         $fileName = 'table.blade.php';
 
         $headerFields = '';
 
         foreach ($this->commandData->inputFields as $field) {
-            $headerFields .= '<th>'.Str::title(str_replace('_', ' ', $field['fieldName']))."</th>\n\t\t\t";
+            $headerFields .= '<th>@lang(\'$MODEL_NAME_PLURAL_CAMEL$/table.'.$field['fieldName']."')</th>\n\t\t\t";
+            $fieldsLang .="'".$field['fieldName']."'=>'". Str::title(str_replace('_', ' ', $field['fieldName'])) ."',\n";
         }
+
+        $fieldsLang .="'action'=>'Action',\n";
+        $fieldsLang .="'delete_confirm_message'=>'Are you sure wants to delete this User?',\n";
 
         $headerFields = trim($headerFields);
 
         $templateData = str_replace('$FIELD_HEADERS$', $headerFields, $templateData);
+        $templateLang = str_replace('$TABLE_LANG$', $fieldsLang, $templateLang);
 
         $tableBodyFields = '';
 
@@ -190,10 +234,17 @@ class ViewGenerator implements GeneratorProvider
 
         $templateData = str_replace('$FIELD_BODY$', $tableBodyFields, $templateData);
 
+        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
+        $templateLang = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateLang);
+
         $path = $this->path.$fileName;
+        $pathLang = $this->path_lang.str_replace('.blade', '', $fileName);
 
         $this->commandData->fileHelper->writeFile($path, $templateData);
         $this->commandData->commandObj->info('table.blade.php created');
+
+        $this->commandData->fileHelper->writeFile($pathLang, $templateLang);
+        $this->commandData->commandObj->info('table.php created');
     }
 
     private function generateShow()
@@ -212,29 +263,49 @@ class ViewGenerator implements GeneratorProvider
 
     private function generateCreate()
     {
+        $langStr ="'new_model'=>'New ".$this->commandData->modelName."',\n";
+
         $templateData = $this->commandData->templatesHelper->getTemplate('create.blade', $this->viewsPath);
+        $templateLang = $this->commandData->templatesHelper->getTemplate('create', $this->langsPath);
+
+        $templateLang = str_replace('$CREATE_LANG$', $langStr, $templateLang);
 
         $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
+        $templateLang = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateLang);
 
         $fileName = 'create.blade.php';
 
         $path = $this->path.$fileName;
+        $pathLang = $this->path_lang.str_replace('.blade', '', $fileName);
 
         $this->commandData->fileHelper->writeFile($path, $templateData);
         $this->commandData->commandObj->info('create.blade.php created');
+
+        $this->commandData->fileHelper->writeFile($pathLang, $templateLang);
+        $this->commandData->commandObj->info('create.php created');
     }
 
     private function generateEdit()
     {
-        $templateData = $this->commandData->templatesHelper->getTemplate('edit.blade', $this->viewsPath);
+        $langStr ="'edit_model'=>'Edit ".$this->commandData->modelName."',\n";
 
+        $templateData = $this->commandData->templatesHelper->getTemplate('edit.blade', $this->viewsPath);
+        $templateLang = $this->commandData->templatesHelper->getTemplate('edit', $this->langsPath);
+
+        $templateLang = str_replace('$EDIT_LANG$', $langStr, $templateLang);
+
+        $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
         $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
 
         $fileName = 'edit.blade.php';
 
         $path = $this->path.$fileName;
+        $pathLang = $this->path_lang.str_replace('.blade', '', $fileName);
 
         $this->commandData->fileHelper->writeFile($path, $templateData);
         $this->commandData->commandObj->info('edit.blade.php created');
+
+        $this->commandData->fileHelper->writeFile($pathLang, $templateLang);
+        $this->commandData->commandObj->info('edit.php created');
     }
 }

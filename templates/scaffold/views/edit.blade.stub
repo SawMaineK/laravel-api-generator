@@ -4,14 +4,14 @@
 <div class="container">
 
 	<h1>
-        Edit $MODEL_NAME$
+        @lang('$MODEL_NAME_PLURAL_CAMEL$/create.new_model')
     </h1>
 
     @include('common.errors')
 
     <div class="widget-container fluid-height clearfix">
         <div class="heading">
-            <i class="fa fa-th-list"></i>Edit $MODEL_NAME$
+            <i class="fa fa-th-list"></i>@lang('$MODEL_NAME_PLURAL_CAMEL$/create.new_model')
         </div>
         <div class="clearfix">
 
