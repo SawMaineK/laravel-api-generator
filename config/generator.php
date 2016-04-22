@@ -88,7 +88,7 @@ return [
     |
     */
 
-    'admin_prefix'             => 'admin',
+    'admin_prefix'             => 'administration',
 
     'api_prefix'               => 'api',
 

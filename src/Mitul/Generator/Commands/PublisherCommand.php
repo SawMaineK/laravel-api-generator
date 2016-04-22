@@ -106,6 +106,8 @@ class PublisherCommand extends Command
 
         $viewsPathForLayout     = __DIR__.'/../../../../views/layout';
 
+        $viewsPathForAuth       = __DIR__.'/../../../../views/auth';
+
         $controllerCopyPath = base_path('app/Http/Controllers');
 
         $requestCopyPath = base_path('app/Http/Requests');
@@ -118,6 +120,8 @@ class PublisherCommand extends Command
 
         $viewsCopyPathForLayout = base_path('resources/views/layouts');
 
+        $viewsCopyPathForAuth = base_path('resources/views/auth');
+
         $this->publishDirectory($controllerPath, $controllerCopyPath, 'generator controller');
         $this->publishDirectory($requestPath, $requestCopyPath, 'generator requests');
         $this->publishDirectory($generatorPath, $generatorCopyPath, 'generator views');
@@ -125,6 +129,7 @@ class PublisherCommand extends Command
         $this->publishDirectory($viewsPath, $viewsCopyPath, 'common views');
         $this->publishDirectory($viewsPathForTemplate, $viewsCopyPathForTemplate, 'template views');
         $this->publishDirectory($viewsPathForLayout, $viewsCopyPathForLayout, 'layout views');
+        $this->publishDirectory($viewsPathForAuth, $viewsCopyPathForAuth, 'auth views');
     }
 
     /**

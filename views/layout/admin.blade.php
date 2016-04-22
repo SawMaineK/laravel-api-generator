@@ -101,77 +101,93 @@
             <div class="container-fluid top-bar">
               <div class="pull-right">
                 <ul class="nav navbar-nav pull-right">
-                  <li class="dropdown notifications hidden-xs">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span aria-hidden="true" class="se7en-flag"></span>
-                      <div class="sr-only">
-                        Notifications
-                      </div>
-                      <p class="counter">
-                        4
-                      </p>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">
-                        <div class="notifications label label-info">
-                          New
+                  <!-- If you want notification, uncomment below code -->
+                  <!-- <li class="dropdown notifications hidden-xs">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span aria-hidden="true" class="se7en-flag"></span>
+                        <div class="sr-only">
+                          Notifications
                         </div>
-                        <p>
-                          New user added: Jane Smith
-                        </p></a>
-                        
-                      </li>
-                      <li><a href="#">
-                        <div class="notifications label label-info">
-                          New
+                        <p class="counter">
+                          4
+                        </p>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="#">
+                                  <div class="notifications label label-info">
+                                      New
+                                  </div>
+                                  <p>
+                                      New user added: Jane Smith
+                                  </p>
+                              </a>
+
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <div class="notifications label label-info">
+                                      New
+                                  </div>
+                                  <p>
+                                      Sales targets available
+                                  </p>
+                              </a>
+
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <div class="notifications label label-info">
+                                      New
+                                  </div>
+                                  <p>
+                                      New performance metric added
+                                  </p>
+                              </a>
+
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <div class="notifications label label-info">
+                                      New
+                                  </div>
+                                  <p>
+                                      New growth data available
+                                  </p>
+                              </a>
+
+                          </li>
+                      </ul>
+                  </li> -->
+                  <!-- If you want messages, uncomment below code -->
+                  <!-- <li class="dropdown messages hidden-xs">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span aria-hidden="true" class="se7en-envelope"></span>
+                        <div class="sr-only">
+                          Messages
                         </div>
-                        <p>
-                          Sales targets available
-                        </p></a>
-                        
-                      </li>
-                      <li><a href="#">
-                        <div class="notifications label label-info">
-                          New
-                        </div>
-                        <p>
-                          New performance metric added
-                        </p></a>
-                        
-                      </li>
-                      <li><a href="#">
-                        <div class="notifications label label-info">
-                          New
-                        </div>
-                        <p>
-                          New growth data available
-                        </p></a>
-                        
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown messages hidden-xs">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span aria-hidden="true" class="se7en-envelope"></span>
-                      <div class="sr-only">
-                        Messages
-                      </div>
-                      <p class="counter">
-                        3
-                      </p>
-                    </a>
-                    <ul class="dropdown-menu messages">
-                      <li><a href="#">
-                        <img width="34" height="34" src="{{ asset('admin/images/avatar-male2.png') }}" />Could we meet today? I wanted...</a>
-                      </li>
-                      <li><a href="#">
-                        <img width="34" height="34" src="{{ asset('admin/images/avatar-female.png') }}" />Important data needs your analysis...</a>
-                      </li>
-                      <li><a href="#">
-                        <img width="34" height="34" src="{{ asset('admin/images/avatar-male2.png') }}" />Buy Se7en today, it's a great theme...</a>
-                      </li>
-                    </ul>
-                  </li>
+                        <p class="counter">
+                          3
+                        </p>
+                      </a>
+                      <ul class="dropdown-menu messages">
+                          <li>
+                              <a href="#">
+                                  <img width="34" height="34" src="{{ asset('admin/images/avatar-male2.png') }}" />Could we meet today? I wanted...</a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <img width="34" height="34" src="{{ asset('admin/images/avatar-female.png') }}" />Important data needs your analysis...</a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <img width="34" height="34" src="{{ asset('admin/images/avatar-male2.png') }}" />Buy Se7en today, it's a great theme...</a>
+                          </li>
+                      </ul>
+                  </li> -->
                   <li class="dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <img width="34" height="34" src="{{ asset('admin/images/avatar-male.jpg') }}" />John Smith<b class="caret"></b></a>
+                    @if (Auth::check())
+                    <img width="34" height="34" src="{{ asset('admin/images/avatar-male.jpg') }}" />{{ Auth::user()->name }}<b class="caret"></b>
+                    @endif
+                    </a>
                     <ul class="dropdown-menu">
                       <li><a href="#">
                         <i class="fa fa-user"></i>My Account</a>
@@ -179,14 +195,14 @@
                       <li><a href="#">
                         <i class="fa fa-gear"></i>Account Settings</a>
                       </li>
-                      <li><a href="{{ asset('logout') }}">
+                      <li><a href="{{ url('/logout') }}">
                         <i class="fa fa-sign-out"></i>Logout</a>
                       </li>
                     </ul>
                   </li>
                 </ul>
               </div>
-              <button class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="logo" href="index.html">se7en</a>
+              <button class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="logo" href="#">Administration</a>
               <form class="navbar-form form-inline col-lg-2 hidden-xs">
                 <input class="form-control" placeholder="Search" type="text">
               </form>
@@ -195,12 +211,9 @@
               <div class="nav-collapse">
                 <ul class="nav">
                   <li>
-                    <a href="#"><span aria-hidden="true" class="se7en-home"></span>Dashboard</a>
+                    <a href="{{asset('administration')}}"><span aria-hidden="true" class="se7en-home"></span>Dashboard</a>
                   </li>
-                  <li><a href="#">
-                    <span aria-hidden="true" class="se7en-feed"></span>Docs</a>
-                  </li>
-                  <li class="dropdown"><a href="{{ asset('admin/generators/create') }}">
+                  <li class="dropdown"><a href="{{ asset('administration/generators/create') }}">
                     <span aria-hidden="true" class="se7en-star"></span>New Model</a>
                   </li>
                   <li class="dropdown"><a data-toggle="dropdown" href="#">
@@ -209,11 +222,8 @@
                     @include('layouts.menus')
                     </ul>
                   </li>
-                  <li><a href="charts.html">
-                    <span aria-hidden="true" class="se7en-charts"></span>Charts</a>
-                  </li>
                   <li><a href="#">
-                    <span aria-hidden="true" class="se7en-gallery"></span>APIs</a>
+                    <span aria-hidden="true" class="se7en-feed"></span>Docs</a>
                   </li>
                 </ul>
               </div>

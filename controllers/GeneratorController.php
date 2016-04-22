@@ -64,7 +64,7 @@ class GeneratorController extends AppBaseController
 
 		if(!$input['model_name']){
 			Flash::error('Required model name field.');
-			return redirect(route('admin.generators.create'));
+			return redirect(route('administration.generators.create'));
 		}
 
 		$json_arr = array();
@@ -107,10 +107,10 @@ class GeneratorController extends AppBaseController
 
 			Flash::success($input['model_name'].' generated successfully.');
 
-			return redirect(route('admin.generators.create'));
+			return redirect(route('administration.generators.create'));
 		}
 		Flash::error('Required more than 1 field.');
-		return redirect(route('admin.generators.create'));
+		return redirect(route('administration.generators.create'));
 		
 	}
 

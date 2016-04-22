@@ -84,6 +84,7 @@ class ModelGenerator implements GeneratorProvider
                     $modelName = $arr[0];
                     $templateData = str_replace('$MODEL_NAME$', $modelName, $templateData);
                     $templateData = str_replace('$MODEL_NAME_CAMEL$', Str::camel($modelName), $templateData);
+                    $templateData = str_replace('$POINTER_FIELD$', $field['fieldName'], $templateData);
                     $templatePointer .=$templateData."\n";
                 }
 

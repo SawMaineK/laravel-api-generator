@@ -23,7 +23,7 @@
             <i class="fa fa-th-list"></i>New Generator
         </div>
         <div class="clearfix">
-		    {!! Form::open(['route' => 'admin.generators.store', 'class'=>'form-horizontal', 'role'=>'form']) !!}
+		    {!! Form::open(['route' => 'administration.generators.store', 'class'=>'form-horizontal', 'role'=>'form']) !!}
 
 		        @include('generators.fields')
 

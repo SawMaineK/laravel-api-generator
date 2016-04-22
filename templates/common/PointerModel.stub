@@ -3,5 +3,5 @@
 	 */
 	public function $MODEL_NAME_CAMEL$()
 	{
-	    return $this->belongsTo('App\Models\$MODEL_NAME$');
+	    return $this->belongsTo('App\Models\$MODEL_NAME$','$POINTER_FIELD$');
 	}

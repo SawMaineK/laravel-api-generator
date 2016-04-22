@@ -18,8 +18,11 @@ Route::group(['prefix' => '$API_PREFIX$', 'namespace' => 'API'], function ()
 |--------------------------------------------------------------------------
 */
 
-Route::group(['prefix' => '$ADMIN_PREFIX$'], function ()
+Route::group(['prefix' => '$ADMIN_PREFIX$', 'middleware' => ['web','auth']], function ()
 {    
+	Route::get('/', function () {
+	    return view('layouts.dashboard');
+	});
     require Config::get('generator.path_scaffold_routes');
 });
 
