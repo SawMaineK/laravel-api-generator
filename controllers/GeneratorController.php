@@ -80,7 +80,7 @@ class GeneratorController extends AppBaseController
 				}else{
 					$json_arr[$key]['type'] = $input['field_type'][$key];
 				}
-				$json_arr[$key]['validations'] 	= $input['is_required'][$key] ? 'required' : '';
+				$json_arr[$key]['validations'] 	= isset($input['is_required'][$key]) ? 'required' : '';
 			}
 		}
 		if(count($json_arr) > 0){
