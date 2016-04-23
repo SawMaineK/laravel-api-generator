@@ -18,7 +18,7 @@ Route::group(['prefix' => '$API_PREFIX$', 'namespace' => 'API'], function ()
 |--------------------------------------------------------------------------
 */
 
-Route::group(['prefix' => '$ADMIN_PREFIX$', 'middleware' => ['web','auth']], function ()
+Route::group(['prefix' => '$ADMIN_PREFIX$', 'middleware' => ['auth']], function ()
 {    
 	Route::get('/', function () {
 	    return view('layouts.dashboard');

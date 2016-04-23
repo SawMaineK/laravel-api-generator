@@ -58,6 +58,9 @@ Documentation
 	6. [Remember Token](#remember-token)
 7. [Generator from existing tables](#generator-from-existing-tables)
 
+## *****NOTE*****
+Make sure if install auth "make:auth"
+
 ## Installation
 
 1. Add this package to your composer.json:
