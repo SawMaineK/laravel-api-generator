@@ -1,7 +1,7 @@
 <!-- $FIELD_NAME_TITLE$ Field -->
 <div class="row">
     <div class="form-group">
-        {!! Form::label('$FIELD_NAME$', Lang::get('$MODEL_NAME_PLURAL_CAMEL$/show_fields.$FIELD_NAME$', ['class' => 'col-sm-4 col-lg-2 control-label']) !!}
+        {!! Form::label('$FIELD_NAME$', Lang::get('$MODEL_NAME_PLURAL_CAMEL$/show_fields.$FIELD_NAME$'), ['class' => 'col-sm-4 col-lg-2 control-label']) !!}
         <div class="col-sm-6 col-lg-6">
             <p>{!! $$MODEL_NAME_CAMEL$['$POINTER_MODEL_CAMEL$']['$POINTER_FIELD_NAME$'] !!}</p>
         </div>
