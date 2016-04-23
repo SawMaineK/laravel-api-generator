@@ -56,8 +56,7 @@ class ViewGenerator implements GeneratorProvider
 
     private function generateFields()
     {
-        $fieldTemplate = $this->commandData->templatesHelper->getTemplate('field.blade', $this->viewsPath);
-
+        $fieldTemplate = '';
         $fieldsStr = '';
         $fieldsLang = '';
 
@@ -65,15 +64,19 @@ class ViewGenerator implements GeneratorProvider
             $fieldsLang .="'".$field['fieldName']."'=>'". Str::title(str_replace('_', ' ', $field['fieldName'])) ."',\n";
             switch ($field['type']) {
                 case 'text':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('field.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::text($fieldTemplate, $field)."\n\n";
                     break;
                 case 'textarea':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('field.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::textarea($fieldTemplate, $field)."\n\n";
                     break;
                 case 'password':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('field.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::password($fieldTemplate, $field)."\n\n";
                     break;
                 case 'email':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('field.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::email($fieldTemplate, $field)."\n\n";
                     break;
                 case 'file':
@@ -89,6 +92,7 @@ class ViewGenerator implements GeneratorProvider
                     $fieldsStr .= FormFieldsGenerator::radio($fieldTemplate, $field)."\n\n";
                     break;
                 case 'number':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('field.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::number($fieldTemplate, $field)."\n\n";
                     break;
                 case 'date':
@@ -96,6 +100,7 @@ class ViewGenerator implements GeneratorProvider
                     $fieldsStr .= FormFieldsGenerator::date($fieldTemplate, $field)."\n\n";
                     break;
                 case 'select':
+                    $fieldTemplate = $this->commandData->templatesHelper->getTemplate('field.blade', $this->viewsPath);
                     $fieldsStr .= FormFieldsGenerator::select($fieldTemplate, $field)."\n\n";
                     break;
                 case 'pointer':
