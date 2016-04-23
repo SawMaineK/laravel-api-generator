@@ -3,8 +3,8 @@ $FIELDS$
 <div class="row">
 	<div class="form-group">
 		<div class="col-sm-6 col-sm-offset-4 col-md-offset-4 col-lg-offset-2">
-		    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-		    <a class="btn btn-default-outline" href="{!! route('administration.$MODEL_NAME_PLURAL_CAMEL$.index') !!}">Cancel</a>
+		    {!! Form::submit(Lang::get('$MODEL_NAME_PLURAL_CAMEL$/fields.save'), ['class' => 'btn btn-primary']) !!}
+		    <a class="btn btn-default-outline" href="{!! route('administration.$MODEL_NAME_PLURAL_CAMEL$.index') !!}">@lang('$MODEL_NAME_PLURAL_CAMEL$/fields.cancel')</a>
 	    </div>
 	</div>
 </div>

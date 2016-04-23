@@ -105,6 +105,9 @@ class ViewGenerator implements GeneratorProvider
             }
         }
 
+        $fieldsLang .="'save'=>'Save',\n";
+        $fieldsLang .="'cancel'=>'Cancel',\n";
+
         $templateData = $this->commandData->templatesHelper->getTemplate('fields.blade', $this->viewsPath);
 
         $templateLang = $this->commandData->templatesHelper->getTemplate('fields', $this->langsPath);
