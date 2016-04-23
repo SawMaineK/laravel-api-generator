@@ -11,6 +11,7 @@
         </div>
         <div class="clearfix">
 		    @include('$MODEL_NAME_PLURAL_CAMEL$.show_fields')
+            <br><br>
         </div>
     </div>
 </div>

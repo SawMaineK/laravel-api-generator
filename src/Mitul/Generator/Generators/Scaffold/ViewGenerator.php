@@ -146,10 +146,10 @@ class ViewGenerator implements GeneratorProvider
                     $modelNameVal = $arr[1];
 
                     $singleFieldStr = str_replace('$POINTER_MODEL_CAMEL$', Str::camel($modelName), $fieldPointerTemplate);
-                    $singleFieldStr = str_replace('$POINTER_FIELD_NAME$', $modelNameVal, $fieldPointerTemplate);
-                    $singleFieldStr = str_replace('$FIELD_NAME_TITLE$', Str::title(str_replace('_', ' ', $field['fieldName'])), $fieldPointerTemplate);
-                    $singleFieldStr = str_replace('$FIELD_NAME$', $field['fieldName'], $fieldPointerTemplate);
-                    $singleFieldStr = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $fieldPointerTemplate);
+                    $singleFieldStr = str_replace('$POINTER_FIELD_NAME$', $modelNameVal, $singleFieldStr);
+                    $singleFieldStr = str_replace('$FIELD_NAME_TITLE$', Str::title(str_replace('_', ' ', $field['fieldName'])), $singleFieldStr);
+                    $singleFieldStr = str_replace('$FIELD_NAME$', $field['fieldName'], $singleFieldStr);
+                    $singleFieldStr = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $singleFieldStr);
                     $fieldsStr .= $singleFieldStr."\n\n";
                 }
             }else{
