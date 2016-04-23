@@ -207,7 +207,7 @@ class ViewGenerator implements GeneratorProvider
         }
 
         $fieldsLang .="'action'=>'Action',\n";
-        $fieldsLang .="'delete_confirm_message'=>'Are you sure wants to delete this $MODEL_NAME$?',\n";
+        $fieldsLang .="'delete_confirm_message'=>'Are you sure wants to delete this ".$this->commandData->modelName."?',\n";
 
         $headerFields = trim($headerFields);
 
