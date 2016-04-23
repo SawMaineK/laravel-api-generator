@@ -207,7 +207,7 @@ class ViewGenerator implements GeneratorProvider
         }
 
         $fieldsLang .="'action'=>'Action',\n";
-        $fieldsLang .="'delete_confirm_message'=>'Are you sure wants to delete this User?',\n";
+        $fieldsLang .="'delete_confirm_message'=>'Are you sure wants to delete this $MODEL_NAME$?',\n";
 
         $headerFields = trim($headerFields);
 
