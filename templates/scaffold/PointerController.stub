@@ -72,7 +72,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 	 */
 	public function show($id)
 	{
-		$$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->find($id);
+		$$MODEL_NAME_CAMEL$ = $MODEL_NAME$::with([$POINTER_MODELS_RELATIONSHIP$])->where('id', $id)->first();
 
 		if(empty($$MODEL_NAME_CAMEL$))
 		{

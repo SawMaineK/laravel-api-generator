@@ -2,6 +2,18 @@
 
 @section('content')
 <div class="container">
-	 @include('$MODEL_NAME_PLURAL_CAMEL$.show_fields')
+    <h1>
+         @lang('$MODEL_NAME_PLURAL_CAMEL$/show.model_detail')
+    </h1>
+    <div class="widget-container fluid-height clearfix">
+        <div class="heading">
+            <i class="fa fa-th-list"></i>@lang('$MODEL_NAME_PLURAL_CAMEL$/show.model_detail')
+        </div>
+        <div class="clearfix">
+		    @include('$MODEL_NAME_PLURAL_CAMEL$.show_fields')
+        </div>
+    </div>
 </div>
 @endsection
+
+

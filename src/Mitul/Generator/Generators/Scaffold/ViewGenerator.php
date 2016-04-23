@@ -132,23 +132,51 @@ class ViewGenerator implements GeneratorProvider
     private function generateShowFields()
     {
         $fieldTemplate = $this->commandData->templatesHelper->getTemplate('show_field.blade', $this->viewsPath);
+        $fieldPointerTemplate = $this->commandData->templatesHelper->getTemplate('show_field_pointer.blade', $this->viewsPath);
 
         $fieldsStr = '';
+        $fieldsLang = '';
 
         foreach ($this->commandData->inputFields as $field) {
-            $singleFieldStr = str_replace('$FIELD_NAME_TITLE$', Str::title(str_replace('_', ' ', $field['fieldName'])), $fieldTemplate);
-            $singleFieldStr = str_replace('$FIELD_NAME$', $field['fieldName'], $singleFieldStr);
-            $singleFieldStr = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $singleFieldStr);
+            $fieldsLang .="'".$field['fieldName']."'=>'". Str::title(str_replace('_', ' ', $field['fieldName'])) ."',\n";
+            if($field['type'] == 'pointer'){
+                $arr = explode(',', $field['typeOptions']);
+                if(count($arr) > 0){
+                    $modelName = $arr[0];
+                    $modelNameVal = $arr[1];
 
-            $fieldsStr .= $singleFieldStr."\n\n";
+                    $singleFieldStr = str_replace('$POINTER_MODEL_CAMEL$', Str::camel($modelName), $fieldPointerTemplate);
+                    $singleFieldStr = str_replace('$POINTER_FIELD_NAME$', $modelNameVal, $fieldPointerTemplate);
+                    $singleFieldStr = str_replace('$FIELD_NAME_TITLE$', Str::title(str_replace('_', ' ', $field['fieldName'])), $fieldPointerTemplate);
+                    $singleFieldStr = str_replace('$FIELD_NAME$', $field['fieldName'], $fieldPointerTemplate);
+                    $singleFieldStr = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $fieldPointerTemplate);
+                    $fieldsStr .= $singleFieldStr."\n\n";
+                }
+            }else{
+                $singleFieldStr = str_replace('$FIELD_NAME_TITLE$', Str::title(str_replace('_', ' ', $field['fieldName'])), $fieldTemplate);
+                $singleFieldStr = str_replace('$FIELD_NAME$', $field['fieldName'], $singleFieldStr);
+                $singleFieldStr = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $singleFieldStr);
+
+                $fieldsStr .= $singleFieldStr."\n\n";
+            }
+            
         }
 
+        $templateLang = $this->commandData->templatesHelper->getTemplate('show_fields', $this->langsPath);
+        $templateLang = str_replace('$SHOW_FIELDS_LANG$', $fieldsLang, $templateLang);
+
+        $templateLang = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateLang);
+
         $fileName = 'show_fields.blade.php';
+        $pathLang = $this->path_lang.str_replace('.blade', '', $fileName);
 
         $path = $this->path.$fileName;
 
         $this->commandData->fileHelper->writeFile($path, $fieldsStr);
         $this->commandData->commandObj->info('show-field.blade.php created');
+
+        $this->commandData->fileHelper->writeFile($pathLang, $templateLang);
+        $this->commandData->commandObj->info('show_fields.php created');
     }
 
     private function generateIndex()
@@ -194,8 +222,6 @@ class ViewGenerator implements GeneratorProvider
 
         $templateData = $this->commandData->templatesHelper->getTemplate('table.blade', $this->viewsPath);
         $templateLang = $this->commandData->templatesHelper->getTemplate('table', $this->langsPath);
-
-        
 
         $fileName = 'table.blade.php';
 
@@ -249,16 +275,26 @@ class ViewGenerator implements GeneratorProvider
 
     private function generateShow()
     {
+        $langStr ="'model_detail'=>'".$this->commandData->modelName." Detail',\n";
+
         $templateData = $this->commandData->templatesHelper->getTemplate('show.blade', $this->viewsPath);
+        $templateLang = $this->commandData->templatesHelper->getTemplate('show', $this->langsPath);
+
+        $templateLang = str_replace('$SHOW_LANG$', $langStr, $templateLang);
 
         $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
+        $templateLang = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateLang);
 
         $fileName = 'show.blade.php';
+        $pathLang = $this->path_lang.str_replace('.blade', '', $fileName);
 
         $path = $this->path.$fileName;
 
         $this->commandData->fileHelper->writeFile($path, $templateData);
         $this->commandData->commandObj->info('show.blade.php created');
+
+        $this->commandData->fileHelper->writeFile($pathLang, $templateLang);
+        $this->commandData->commandObj->info('show.php created');
     }
 
     private function generateCreate()
