@@ -256,8 +256,12 @@ class ViewGenerator implements GeneratorProvider
                 if(count($arr) > 0){
                     $modelName = $arr[0];
                     $modelNameVal = $arr[1];
-                    $tableBodyFields .= '<td>{!! $'.$this->commandData->modelNameCamel.'->'.Str::camel($modelName).'->'.$modelNameVal." !!}</td>\n\t\t\t";
+                    $tableBodyFields .= "<td>{!! $".$this->commandData->modelNameCamel."['".Str::camel($modelName)."']['".$modelNameVal."'] !!}</td>\n\t\t\t";
                 }
+            }elseif ($field['type'] == 'file') {
+               $tableBodyFields .= '<td><img width="150" src="{!! asset(\''.$this->commandData->modelNamePluralCamel.'/x400/\'.$'.$this->commandData->modelNameCamel.'->'.$field['fieldName'].") !!}\"></td>\n\t\t\t";
+            }elseif ($field['type'] == 'textarea') {
+                $tableBodyFields .= '<td>{!! Illuminate\Support\Str::words($'.$this->commandData->modelNameCamel.'->'.$field['fieldName'].", 16,'....') !!}</td>\n\t\t\t";
             }
             else
                 $tableBodyFields .= '<td>{!! $'.$this->commandData->modelNameCamel.'->'.$field['fieldName']." !!}</td>\n\t\t\t";

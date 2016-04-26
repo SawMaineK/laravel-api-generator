@@ -37,6 +37,8 @@ class ViewControllerGenerator implements GeneratorProvider
         }
 
         $templateData = $this->generatePointerModel($templateData);
+        $templateData = $this->generateFileUpload($templateData);
+
         
         $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
 
@@ -47,6 +49,22 @@ class ViewControllerGenerator implements GeneratorProvider
         $this->commandData->fileHelper->writeFile($path, $templateData);
         $this->commandData->commandObj->comment("\nController created: ");
         $this->commandData->commandObj->info($fileName);
+    }
+
+    private function generateFileUpload($templateData){
+        $templateFileUpload = [];
+        foreach ($this->commandData->inputFields as $field) {
+            if($field['type'] == 'file'){
+                $fileUpload = $this->commandData->templatesHelper->getTemplate('FileUpload', 'scaffold');
+                $fileUpload = str_replace('$FIELD_NAME$', $field['fieldName'], $fileUpload);
+                $templateFileUpload[] = $fileUpload;
+            }
+        }
+        if(count($templateFileUpload) > 0)
+            $templateData = str_replace('$FILE_UPLOADS$', implode("\n", $templateFileUpload), $templateData);
+        else
+            $templateData = str_replace('$FILE_UPLOADS$', '', $templateData);
+        return $templateData;
     }
 
     private function generatePointerModel($templateData){

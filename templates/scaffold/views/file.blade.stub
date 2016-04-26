@@ -5,7 +5,11 @@
 	    <div class="col-sm-6 col-lg-6"> 
 	        <div class="fileupload fileupload-new" data-provides="fileupload">
                 <div class="fileupload-new img-thumbnail" style="width: 200px; height: 150px;">
-                	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+                	@if(isset($$MODEL_NAME_CAMEL$))
+	                	<img src="{{asset('$MODEL_NAME_PLURAL_CAMEL$/x400/'.$$MODEL_NAME_CAMEL$->$FIELD_NAME$)}}">
+	                @else
+	                	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image">
+	                @endif
                 </div>
                 <div class="fileupload-preview fileupload-exists img-thumbnail" style="width: 200px; max-height: 150px"></div>
                 <div>

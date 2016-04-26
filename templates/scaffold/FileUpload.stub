@@ -1,0 +1,4 @@
+		if($request->file('$FIELD_NAME$')){
+			$image = $this->uploadImage($request->file('$FIELD_NAME$'),'/$MODEL_NAME_PLURAL_CAMEL$/');
+			$input['$FIELD_NAME$'] = $image['name'];
+		}
