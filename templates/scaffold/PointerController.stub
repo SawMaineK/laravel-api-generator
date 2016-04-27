@@ -157,6 +157,8 @@ class $MODEL_NAME$Controller extends AppBaseController
 			return redirect(route('administration.$MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
+		$DELETE_UPLOAD_FILES$
+
 		$this->$MODEL_NAME_CAMEL$Repository->delete($id);
 
 		Flash::success('$MODEL_NAME$ deleted successfully.');

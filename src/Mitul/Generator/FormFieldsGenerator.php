@@ -166,7 +166,7 @@ class FormFieldsGenerator
     {
         //$textField = self::generateLabel($field);
 
-        $textField = "\n\t\t\t{!! Form::select('\$FIELD_NAME\$', \$INPUT_ARR\$, null, ['class' => 'form-control']) !!}";
+        $textField = "\n\t\t\t{!! Form::select('\$FIELD_NAME\$', \$INPUT_ARR\$, null, ['class' => 'select2able']) !!}";
         $textField = str_replace('$FIELD_NAME$', $field['fieldName'], $textField);
 
         if (count($field['typeOptions']) > 0) {

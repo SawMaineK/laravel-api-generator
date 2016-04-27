@@ -53,17 +53,26 @@ class ViewControllerGenerator implements GeneratorProvider
 
     private function generateFileUpload($templateData){
         $templateFileUpload = [];
+        $templateDelFileUpload = [];
         foreach ($this->commandData->inputFields as $field) {
             if($field['type'] == 'file'){
                 $fileUpload = $this->commandData->templatesHelper->getTemplate('FileUpload', 'scaffold');
                 $fileUpload = str_replace('$FIELD_NAME$', $field['fieldName'], $fileUpload);
                 $templateFileUpload[] = $fileUpload;
+                $templateDelFileUpload[] = "\t\t@unlink(public_path('/".$this->commandData->modelNamePluralCamel."/'.\$".$this->commandData->modelNameCamel."->".$field['fieldName']."));";
+                $templateDelFileUpload[] = "\t\t@unlink(public_path('/".$this->commandData->modelNamePluralCamel."/x100/'.\$".$this->commandData->modelNameCamel."->".$field['fieldName']."));";
+                $templateDelFileUpload[] = "\t\t@unlink(public_path('/".$this->commandData->modelNamePluralCamel."/x200/'.\$".$this->commandData->modelNameCamel."->".$field['fieldName']."));";
+                $templateDelFileUpload[] = "\t\t@unlink(public_path('/".$this->commandData->modelNamePluralCamel."/x400/'.\$".$this->commandData->modelNameCamel."->".$field['fieldName']."));\n";
             }
         }
-        if(count($templateFileUpload) > 0)
+        if(count($templateFileUpload) > 0){
             $templateData = str_replace('$FILE_UPLOADS$', implode("\n", $templateFileUpload), $templateData);
-        else
+            $templateData = str_replace('$DELETE_UPLOAD_FILES$', implode("\n", $templateDelFileUpload), $templateData);
+        }
+        else{
             $templateData = str_replace('$FILE_UPLOADS$', '', $templateData);
+            $templateData = str_replace('$DELETE_UPLOAD_FILES$', '', $templateData);
+        }
         return $templateData;
     }
 
