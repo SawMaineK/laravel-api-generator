@@ -35,7 +35,19 @@
     <script type="text/javascript">
         $('.dataTable').dataTable({
             "bPaginate": false,
-            "bInfo": false
+            "bInfo": false,
+            "dom": 'Bfrtip',
+            "aaSorting": [],
+            "buttons": [
+                // 'copyHtml5',
+                'excelHtml5',
+                // 'csvHtml5',
+                // 'pdfHtml5'
+            ]
+        });
+        $('.buttons-excel').each(function() {
+           $(this).removeClass('dt-button').addClass('btn btn-primary-outline');
+           $(this).html('<i class="fa fa-print"></i>'+$(this).html());
         });
     </script>
 

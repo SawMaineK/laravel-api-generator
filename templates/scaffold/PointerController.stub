@@ -130,7 +130,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 
 		$input = $request->all();
 
-		$FILE_UPLOADS$
+		$EDIT_FILE_UPLOADS$
 
 		$this->$MODEL_NAME_CAMEL$Repository->updateRich($input, $id);
 
