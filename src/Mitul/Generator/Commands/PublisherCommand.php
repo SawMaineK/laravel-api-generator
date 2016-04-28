@@ -116,9 +116,9 @@ class PublisherCommand extends Command
 
         $controllerCopyPath = base_path('app/Http/Controllers');
 
-        $exceptionCopyPath = base_path('app/Http/Middleware');
+        $exceptionCopyPath = base_path('app/Exceptions');
 
-        $middlewareCopyPath = base_path('app/Exceptions');
+        $middlewareCopyPath = base_path('app/Http/Middleware');
 
         $requestCopyPath = base_path('app/Http/Requests');
 
