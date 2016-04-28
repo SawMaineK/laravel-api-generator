@@ -19,6 +19,7 @@
     <link href="{{ asset('admin/stylesheets/select2.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/stylesheets/morris.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/stylesheets/datatables.css') }}" media="all" rel="stylesheet" type="text/css" />
+     <link href="{{ asset('admin/stylesheets/buttons.dataTables.min.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/stylesheets/datepicker.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/stylesheets/timepicker.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/stylesheets/colorpicker.css') }}" media="all" rel="stylesheet" type="text/css" />
@@ -32,7 +33,8 @@
     <link href="{{ asset('admin/stylesheets/pygments.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/stylesheets/style.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/stylesheets/color/green.css') }}" media="all" rel="alternate stylesheet" title="green-theme" type="text/css" />
-    <link href="{{ asset('admin/stylesheets/color/orange.css') }}" media="all" rel="alternate stylesheet" title="orange-theme" type="text/css" /><link href="{{ asset('admin/stylesheets/color/magenta.css') }}" media="all" rel="alternate stylesheet" title="magenta-theme" type="text/css" />
+    <link href="{{ asset('admin/stylesheets/color/orange.css') }}" media="all" rel="alternate stylesheet" title="orange-theme" type="text/css" />
+    <link href="{{ asset('admin/stylesheets/color/magenta.css') }}" media="all" rel="alternate stylesheet" title="magenta-theme" type="text/css" />
     <link href="{{ asset('admin/stylesheets/color/gray.css') }}" media="all" rel="alternate stylesheet" title="gray-theme" type="text/css" />
     <link href="{{ asset('admin/stylesheets/jquery.fileupload-ui.css') }}" media="screen" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/stylesheets/dropzone.css') }}" media="screen" rel="stylesheet" type="text/css" />
@@ -55,6 +57,9 @@
     <script src="{{ asset('admin/javascripts/fullcalendar.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('admin/javascripts/gcal.js') }}" type="text/javascript"></script>
     <script src="{{ asset('admin/javascripts/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('admin/javascripts/dataTables.buttons.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('admin/javascripts/jszip.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('admin/javascripts/buttons.html5.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('admin/javascripts/datatable-editable.js') }}" type="text/javascript"></script>
     <script src="{{ asset('admin/javascripts/jquery.easy-pie-chart.js') }}" type="text/javascript"></script>
     <script src="{{ asset('admin/javascripts/excanvas.min.js') }}" type="text/javascript"></script>
