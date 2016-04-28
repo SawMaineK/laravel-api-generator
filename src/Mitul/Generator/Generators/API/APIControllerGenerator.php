@@ -6,6 +6,7 @@ use Config;
 use Mitul\Generator\CommandData;
 use Mitul\Generator\Generators\GeneratorProvider;
 use Mitul\Generator\Utils\GeneratorUtils;
+use Illuminate\Support\Str;
 
 class APIControllerGenerator implements GeneratorProvider
 {
@@ -24,6 +25,23 @@ class APIControllerGenerator implements GeneratorProvider
     public function generate()
     {
         $templateData = $this->commandData->templatesHelper->getTemplate('Controller', 'api');
+
+        if ($this->commandData->pointerModel){
+            $pointerRelationship = [];
+            foreach ($this->commandData->inputFields as $field) {
+                if($field['type'] == 'pointer'){
+                    $arr = explode(',', $field['typeOptions']);
+                    if(count($arr) > 0){
+                        $modelName = $arr[0];
+                        $pointerRelationship[] = "'".Str::camel($modelName)."'";
+                    }
+
+                }
+            }
+            $templateData = str_replace('$POINTER_MODELS_RELATIONSHIP$', "with([".implode(", ", $pointerRelationship)."])->", $templateData);
+        }else{
+            $templateData = str_replace('$POINTER_MODELS_RELATIONSHIP$', '', $templateData);
+        }
 
         $templateData = GeneratorUtils::fillTemplate($this->commandData->dynamicVars, $templateData);
 

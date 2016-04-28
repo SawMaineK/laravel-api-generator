@@ -18,25 +18,28 @@ class AppBaseController extends AppBaseController
     public function validateRequestOrFail($request, array $rules, $messages = [], $customAttributes = [])
     {
         $validator = $this->getValidationFactory()->make($request->all(), $rules, $messages, $customAttributes);
-	    
-        if ($validator->fails())
-        {
-	        throw new HttpException(400, $validator->errors()->getMessages());
+        if ($validator->fails()) {
+            return $this->getFirstMessage($validator, $rules);
         }
     }
 
-	public function makeResponse($result, $message)
-	{
-		return [
-			'data' => $result,
-			'message' => $message
-		];
-	}
+    public function getFirstMessage($validator, array $rules){
+        foreach ($rules as $rule => $value) {
+            if($validator->errors()->has($rule))
+                return Response::json($validator->errors()->first($rule), 400);
+        }
+    }
 
-	public function sendResponse($result, $message)
-	{
-		return Response::json($this->makeResponse($result, $message));
-	}
+    public function makeResponse($result, $message)
+    {
+        $result['message'] = $message;
+        return $result;
+    }
+
+    public function sendResponse($result, $message)
+    {
+        return Response::json($this->makeResponse($result, $message));
+    }
 
     public function uploadImage($file, $path, $resize = [400, 200, 100]){
         $filename = "photo_".date('YmdHis')."_".rand().$file->getClientOriginalName();;

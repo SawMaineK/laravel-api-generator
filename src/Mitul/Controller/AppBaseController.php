@@ -10,28 +10,32 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 class AppBaseController extends Controller
 {
     /**
-     * Validate request for current resource.
+     * Validate request for current resource
      *
      * @param Request $request
-     * @param array   $rules
-     * @param array   $messages
-     * @param array   $customAttributes
+     * @param array $rules
+     * @param array $messages
+     * @param array $customAttributes
      */
     public function validateRequestOrFail($request, array $rules, $messages = [], $customAttributes = [])
     {
         $validator = $this->getValidationFactory()->make($request->all(), $rules, $messages, $customAttributes);
-
         if ($validator->fails()) {
-            throw new HttpException(400, json_encode($validator->errors()->getMessages()));
+            return $this->getFirstMessage($validator, $rules);
+        }
+    }
+
+    public function getFirstMessage($validator, array $rules){
+        foreach ($rules as $rule => $value) {
+            if($validator->errors()->has($rule))
+                return Response::json($validator->errors()->first($rule), 400);
         }
     }
 
     public function makeResponse($result, $message)
     {
-        return [
-            'data'    => $result,
-            'message' => $message,
-        ];
+        $result['message'] = $message;
+        return $result;
     }
 
     public function sendResponse($result, $message)

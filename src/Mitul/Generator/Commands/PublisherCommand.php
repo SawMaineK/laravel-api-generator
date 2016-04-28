@@ -96,11 +96,17 @@ class PublisherCommand extends Command
     {
         $controllerPath         = __DIR__.'/../../../../controllers';
 
+        $exceptionPath         = __DIR__.'/../../../../exceptions';
+
+        $middlewarePath         = __DIR__.'/../../../../middleware';
+
         $requestPath            = __DIR__.'/../../../../requests';
 
         $generatorPath          = __DIR__.'/../../../../views/generators';
 
         $viewsPath              = __DIR__.'/../../../../views/common';
+
+        $errorsPath             = __DIR__.'/../../../../views/errors';
 
         $viewsPathForTemplate   = __DIR__.'/../../../../views/template';
 
@@ -110,11 +116,17 @@ class PublisherCommand extends Command
 
         $controllerCopyPath = base_path('app/Http/Controllers');
 
+        $exceptionCopyPath = base_path('app/Http/Middleware');
+
+        $middlewareCopyPath = base_path('app/Exceptions');
+
         $requestCopyPath = base_path('app/Http/Requests');
 
         $generatorCopyPath = base_path('resources/views/generators');
 
         $viewsCopyPath = base_path('resources/views/common');
+
+        $errorsCopyPath = base_path('resources/views/errors');
 
         $viewsCopyPathForTemplate = base_path('public/admin');
 
@@ -123,10 +135,13 @@ class PublisherCommand extends Command
         $viewsCopyPathForAuth = base_path('resources/views/auth');
 
         $this->publishDirectory($controllerPath, $controllerCopyPath, 'generator controller');
+        $this->publishDirectory($exceptionPath, $exceptionCopyPath, 'generator exception');
+        $this->publishDirectory($middlewarePath, $middlewareCopyPath, 'generator middleware');
+        $this->publishDirectory($controllerPath, $controllerCopyPath, 'generator controller');
         $this->publishDirectory($requestPath, $requestCopyPath, 'generator requests');
         $this->publishDirectory($generatorPath, $generatorCopyPath, 'generator views');
         $this->publishDirectory($viewsPath, $viewsCopyPath, 'common views');
-        $this->publishDirectory($viewsPath, $viewsCopyPath, 'common views');
+        $this->publishDirectory($errorsPath, $errorsCopyPath, 'error views');
         $this->publishDirectory($viewsPathForTemplate, $viewsCopyPathForTemplate, 'template views');
         $this->publishDirectory($viewsPathForLayout, $viewsCopyPathForLayout, 'layout views');
         $this->publishDirectory($viewsPathForAuth, $viewsCopyPathForAuth, 'auth views');

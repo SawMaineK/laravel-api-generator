@@ -23,11 +23,17 @@ class $MODEL_NAME$APIController extends AppBaseController
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		$$MODEL_NAME_PLURAL_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->all();
 
-		return $this->sendResponse($$MODEL_NAME_PLURAL_CAMEL$->toArray(), "$MODEL_NAME_PLURAL$ retrieved successfully");
+		$offset  = $request->input('offset') ? $request->input('offset') : 1;
+		$limit   = $request->input('limit') ? $request->input('limit') : 12;
+
+		$offset  = ($offset - 1) * $limit;
+		
+		$$MODEL_NAME_PLURAL_CAMEL$ = $MODEL_NAME$::$POINTER_MODELS_RELATIONSHIP$orderBy('id','desc')->offset($offset)->limit($limit)->get();
+				
+		return response()->json($$MODEL_NAME_PLURAL_CAMEL$);
 	}
 
 	/**
@@ -50,8 +56,12 @@ class $MODEL_NAME$APIController extends AppBaseController
 	 */
 	public function store(Request $request)
 	{
-		if(sizeof($MODEL_NAME$::$rules) > 0)
-			$this->validateRequestOrFail($request, $MODEL_NAME$::$rules);
+		if(sizeof($MODEL_NAME$::$rules) > 0){
+			$validator =  $this->validateRequestOrFail($request, $MODEL_NAME$::$rules);
+			if($validator){
+				return $validator;
+			}
+		}
 
 		$input = $request->all();
 
@@ -85,8 +95,7 @@ class $MODEL_NAME$APIController extends AppBaseController
 	 */
 	public function edit($id)
 	{
-		// maybe, you can return a template for JS
-//		Errors::throwHttpExceptionWithCode(Errors::EDITION_FORM_NOT_EXISTS, ['id' => $id], static::getHATEOAS(['%id' => $id]));
+		//
 	}
 
 	/**
@@ -100,6 +109,13 @@ class $MODEL_NAME$APIController extends AppBaseController
 	 */
 	public function update($id, Request $request)
 	{
+		if(sizeof($MODEL_NAME$::$rules) > 0){
+			$validator =  $this->validateRequestOrFail($request, $MODEL_NAME$::$rules);
+			if($validator){
+				return $validator;
+			}
+		}
+
 		$input = $request->all();
 
 		/** @var $MODEL_NAME$ $$MODEL_NAME_CAMEL$ */

@@ -99,10 +99,14 @@ class GeneratorController extends AppBaseController
 			if(isset($input['skip_migration']) && $input['skip_migration']){
 				$option['--skipMigration'] = true;
 			}
-			if(isset($input['has_api']) && $input['has_api']){
+			if(isset($input['scaffold']) && $input['scaffold'] && isset($input['has_api']) && $input['has_api']){
 				Artisan::call('mitul.generator:scaffold_api',$option);
-			}else{
+			}elseif(isset($input['scaffold']) && $input['scaffold']){
 				Artisan::call('mitul.generator:scaffold',$option);
+			}elseif(isset($input['has_api']) && $input['has_api']){
+				Artisan::call('mitul.generator:api',$option);
+			}else{
+				Flash::error('Required 1 scaffold or API.');
 			}
 
 			Flash::success($input['model_name'].' generated successfully.');
