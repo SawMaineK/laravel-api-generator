@@ -107,7 +107,7 @@
 		<div class="form-group{{ $errors->has('field_type') ? ' has-error' : '' }}">
 	    {!! Form::label('field_type', 'Field Type:',['class' => 'control-label']) !!}
 	        
-			{!! Form::select('field_type[]', [ 'text' => 'text', 'textarea' => 'textarea', 'email' => 'email', 'date' => 'date', 'password' => 'password', 'checkbox' => 'checkbox', 'radio' => 'radio', 'select' => 'select', 'file' => 'file', 'pointer' => 'pointer' ], null, ['class' => 'form-control field_type']) !!}
+			{!! Form::select('field_type[]', [ 'text' => 'text','number' => 'number', 'textarea' => 'textarea', 'email' => 'email', 'date' => 'date', 'password' => 'password', 'checkbox' => 'checkbox', 'radio' => 'radio', 'select' => 'select', 'file' => 'file', 'pointer' => 'pointer' ], null, ['class' => 'form-control field_type']) !!}
 	        @if ($errors->has('field_type'))
 	            <span class="help-block">
 	                <strong>{{ $errors->first('field_type') }}</strong>
@@ -181,7 +181,7 @@
 		<div class="form-group{{ $errors->has('field_type') ? ' has-error' : '' }}">
 	    {!! Form::label('field_type', 'Field Type:',['class' => 'control-label']) !!}
 	        
-			{!! Form::select('field_type[]', [ 'text' => 'text', 'textarea' => 'textarea', 'email' => 'email', 'date' => 'date', 'password' => 'password', 'checkbox' => 'checkbox', 'radio' => 'radio', 'select' => 'select', 'file' => 'file', 'pointer' => 'pointer' ], null, ['class' => 'form-control field_type']) !!}
+			{!! Form::select('field_type[]', [ 'text' => 'text','number' => 'number', 'textarea' => 'textarea', 'email' => 'email', 'date' => 'date', 'password' => 'password', 'checkbox' => 'checkbox', 'radio' => 'radio', 'select' => 'select', 'file' => 'file', 'pointer' => 'pointer' ], null, ['class' => 'form-control field_type']) !!}
 	        @if ($errors->has('field_type'))
 	            <span class="help-block">
 	                <strong>{{ $errors->first('field_type') }}</strong>
@@ -257,7 +257,7 @@
 		<div class="form-group{{ $errors->has('field_type') ? ' has-error' : '' }}">
 	    {!! Form::label('field_type', 'Field Type:',['class' => 'control-label']) !!}
 	        
-			{!! Form::select('field_type[]', [ 'text' => 'text', 'textarea' => 'textarea', 'email' => 'email', 'date' => 'date', 'password' => 'password', 'checkbox' => 'checkbox', 'radio' => 'radio', 'select' => 'select', 'file' => 'file', 'pointer' => 'pointer' ], null, ['class' => 'form-control field_type']) !!}
+			{!! Form::select('field_type[]', [ 'text' => 'text', 'number' => 'number', 'textarea' => 'textarea', 'email' => 'email', 'date' => 'date', 'password' => 'password', 'checkbox' => 'checkbox', 'radio' => 'radio', 'select' => 'select', 'file' => 'file', 'pointer' => 'pointer' ], null, ['class' => 'form-control field_type']) !!}
 	        @if ($errors->has('field_type'))
 	            <span class="help-block">
 	                <strong>{{ $errors->first('field_type') }}</strong>
