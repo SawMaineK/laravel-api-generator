@@ -86,7 +86,7 @@ class GeneratorController extends AppBaseController
 		}
 		if(count($json_arr) > 0){
 			
-			$option['model'] = $input['model_name'];
+			$option['model'] = str_replace(' ', '_', $input['model_name']);
 			$option['--fieldsData'] = $json_arr;
 			if(isset($input['set_paginater']) && $input['set_paginater']){
 				$option['--paginate'] = 10;
