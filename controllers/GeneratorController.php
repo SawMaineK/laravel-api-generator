@@ -71,6 +71,7 @@ class GeneratorController extends AppBaseController
 		$option = array();
 		foreach ($input['field_name'] as $key => $field) {
 			if($field){
+				$field = str_replace(' ', '_', $field);
 				$json_arr[$key]['field'] 		= $field.":".$input['data_type'][$key];
 				if($input['field_type'][$key] == 'checkbox' || $input['field_type'][$key] == 'radio' || $input['field_type'][$key] == 'select'){
 					$json_arr[$key]['type'] = $input['field_type'][$key].":".$input['value'][$key];
@@ -109,10 +110,17 @@ class GeneratorController extends AppBaseController
 				Flash::error('Required 1 scaffold or API.');
 			}
 
+			$generator_model['name'] = $input['model_name'];
+			$generator_model['field'] = $json_arr;
+			$generator_model['option'] = $option;
+
+			$this->saveFile($input['model_name'], $generator_model);
+
 			Flash::success($input['model_name'].' generated successfully.');
 
 			return redirect(route('administration.generators.create'));
 		}
+		
 		Flash::error('Required more than 1 field.');
 		return redirect(route('administration.generators.create'));
 		
@@ -165,5 +173,38 @@ class GeneratorController extends AppBaseController
 	public function destroy($id)
 	{
 		//
+	}
+
+	/**
+     * To Read from Json File.
+     */
+    public function readJson($fileName){
+        $file = "generator_models/".$fileName.'.json';
+        if(file_exists($file)){
+            $jsonString = file_get_contents($file);
+            $jsonArr = json_decode($jsonString,true);
+            return $jsonArr;
+        }else{
+            return array();
+        }
+        
+    }
+
+    /**
+	 * To Save File as JSON File.
+	 */
+	public function saveFile($fileName,$array){
+		if($fileName && is_array($array)){
+			try {
+				$fileDir = "generator_models/".$fileName.'.json';
+				$fileData = fopen($fileDir, 'w+');
+				fwrite($fileData, json_encode($array));
+				fclose($fileData);
+				chmod($fileDir,0777);
+			} catch (Exception $e) {
+				return $e;
+			}
+			
+		}
 	}
 }

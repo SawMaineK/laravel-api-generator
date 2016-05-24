@@ -62,11 +62,17 @@ class ViewControllerGenerator implements GeneratorProvider
                 $fileUpload = str_replace('$FIELD_NAME$', $field['fieldName'], $fileUpload);
                 $editFileUpload = str_replace('$FIELD_NAME$', $field['fieldName'], $editFileUpload);
                 $templateFileUpload[] = $fileUpload;
-                $templateEditFileUpload[] = $editFileUpload;
+                
                 $templateDelFileUpload[] = "\t\t@unlink(public_path('/".$this->commandData->modelNamePluralCamel."/'.\$".$this->commandData->modelNameCamel."->".$field['fieldName']."));";
                 $templateDelFileUpload[] = "\t\t@unlink(public_path('/".$this->commandData->modelNamePluralCamel."/x100/'.\$".$this->commandData->modelNameCamel."->".$field['fieldName']."));";
                 $templateDelFileUpload[] = "\t\t@unlink(public_path('/".$this->commandData->modelNamePluralCamel."/x200/'.\$".$this->commandData->modelNameCamel."->".$field['fieldName']."));";
                 $templateDelFileUpload[] = "\t\t@unlink(public_path('/".$this->commandData->modelNamePluralCamel."/x400/'.\$".$this->commandData->modelNameCamel."->".$field['fieldName']."));\n";
+                
+                if(count($templateEditFileUpload) > 0){
+                    $editFileUpload = str_replace('$DELETE_UPLOAD_FILES$', implode("\n", $templateDelFileUpload), $editFileUpload);
+                }
+
+                $templateEditFileUpload[] = $editFileUpload;
             }
         }
         if(count($templateFileUpload) > 0){
