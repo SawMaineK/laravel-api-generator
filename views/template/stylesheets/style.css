@@ -3700,3 +3700,10 @@ body.fourofour {
       left: 20px; }
     ul.timeline.animated li.active:nth-child(odd) .timeline-content {
       left: 0; } }
+      
+.table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
